@@ -1,20 +1,33 @@
 package com.example.demo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import com.sun.istack.NotNull;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Collection;
 
-@MappedSuperclass
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class User {
+@Entity
+@Table
+@Getter
+@Setter
+public class User {
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column
+    private String userName;
+
+    @Column
+    private String password;
+
+    @Column
+    private boolean active;
 
     @Column
     private String name;
@@ -27,6 +40,9 @@ public abstract class User {
 
     @Column
     private Date birth;
+
+    @Column
+    private String roles;
 
 
 }
