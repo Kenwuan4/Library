@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface EditorialRepository extends JpaRepository<Editorial, Integer> {
 
-
-    List<Editorial> findByNameContaining(String name);
-
+    Editorial findByNameContaining(String name);
+    Editorial findEditorialByName(String name);
 }

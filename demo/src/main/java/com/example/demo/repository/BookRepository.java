@@ -10,6 +10,6 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
     Page<Book> findAll(Pageable pageable);
-    Page<Book> findByEditorialId(Integer id, Pageable pageable);
-    Page<Book> findByEditorialLike(String name, Pageable pageable);
+    List<Book> findByEditorialId(Integer id);
+    List<Book> findBooksByPriceIsLessThanEqual(double price);
 }

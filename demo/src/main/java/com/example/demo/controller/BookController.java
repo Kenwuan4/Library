@@ -21,6 +21,16 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
+    @GetMapping("/books/editorials/{name}")
+    private List<Book> getBooksByEditorial(@PathVariable("name") String editorial){
+        return bookService.getBooksByEditorial(editorial);
+    }
+
+    @GetMapping("/books/price/{price}")
+    private List<Book> getBooksByPrice (@PathVariable("price") double price){
+        return bookService.getBookByPrice(price);
+    }
+
     @DeleteMapping("/book/{bookid}")
     private void deleteBook(@PathVariable("bookid") int id){
         bookService.deleteBook(id);
@@ -37,4 +47,5 @@ public class BookController {
     {
         return bookService.update(books);
     }
+
 }
