@@ -415,33 +415,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "PostUser Copy",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"birth\": \"2020-01-01\",\n    \"identification\" : 1234569,\n    \"last_name\": \"tester\",\n    \"name\": \"test\",\n    \"password\": \"1234\",\n    \"user_name\": \"user\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8098/register",
-					"host": [
-						"localhost"
-					],
-					"port": "8098",
-					"path": [
-						"register"
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }
