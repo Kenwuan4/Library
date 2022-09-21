@@ -13,7 +13,7 @@ public class StaffController {
     @Autowired
     StaffService staffService;
 
-    @PostMapping("/new_staff")
+    @PostMapping("/newStaff")
     private Staff saveStaff(@RequestBody Staff staff){
         return staffService.saveStaff(staff);
     }
@@ -23,7 +23,7 @@ public class StaffController {
         staffService.invalidateStaff(id);
     }
 
-    @GetMapping("/all_staff")
+    @GetMapping("/staff")
     private List<Staff> getStaff(){
         return staffService.listStaff();
     }
