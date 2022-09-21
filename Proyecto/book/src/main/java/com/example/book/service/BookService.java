@@ -4,7 +4,9 @@ import com.example.book.model.Book;
 import com.example.book.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -12,13 +14,23 @@ public class BookService {
     @Autowired
     BookRepository bookRepository;
 
+    @Autowired
+    private RestTemplate restTemplate;
     public List<Book> getAllBooks(){
         return bookRepository.findAll();
     }
 
+    public List<Object> getEditoriales(){
+        Object[] objects = restTemplate.getForObject("http://editorialM/editorials", Object[].class);
+        return Arrays.asList(objects);
+    }
+
     /*public List<Book> getBooksByEditorial(String editorial){
-        Editorial editorials = editorialRepository.findEditorialByName(editorial);
-        if (editorials != null)
+
+
+        Object[] objects = restTemplate.getForObject("http://editorialM/editorials/editorial", Object[].class);
+        if (editorial != null)
+
             return bookRepository.findByEditorialId(editorials.getId());
         else {
             return Collections.emptyList();

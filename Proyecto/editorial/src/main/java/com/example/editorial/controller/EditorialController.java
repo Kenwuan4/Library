@@ -20,6 +20,11 @@ public class EditorialController {
         return editorialService.getAllEditorials();
     }
 
+    @GetMapping ("/editorials/{name}")
+    private Editorial getEditorialbyName(@PathVariable ("name") String name){
+        return editorialService.getEditorialByName(name);
+    }
+
     @DeleteMapping("/editorial/{id}")
     private void deleteEdi(@PathVariable("id") int id ){
         editorialService.delete(id);

@@ -18,6 +18,9 @@ public class EditorialService {
         return editorialRepository.findAll();
     }
 
+    public Editorial getEditorialByName(String name){
+        return editorialRepository.findEditorialByName(name);
+    }
     public Editorial save(Editorial editorial){
         return editorialRepository.save(editorial);
     }
