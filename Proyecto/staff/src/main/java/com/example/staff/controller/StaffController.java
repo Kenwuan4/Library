@@ -18,7 +18,7 @@ public class StaffController {
         return staffService.saveStaff(staff);
     }
 
-    @PostMapping("/staff/{id}")
+    @PutMapping("/staff/{id}")
     private void invalidateStaff(@PathVariable("id") Integer id ){
         staffService.invalidateStaff(id);
     }

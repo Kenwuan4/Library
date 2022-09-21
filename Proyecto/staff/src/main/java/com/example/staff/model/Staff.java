@@ -25,8 +25,8 @@ public class Staff {
     @Column
     private String name;
 
-    @Column
-    private String lastName;
+    @Column (nullable = true)
+    private String lastname;
 
     @Column
     private long identification;
