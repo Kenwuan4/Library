@@ -36,4 +36,7 @@ public class Book {
 
     @Column
     private double price;
+
+    @Column
+    private Integer editorialId;
 }

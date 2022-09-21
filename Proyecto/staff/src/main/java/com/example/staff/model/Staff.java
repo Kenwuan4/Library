@@ -38,6 +38,6 @@ public class Staff {
     private String role;
 
     @Column
-    private boolean active;
+    private boolean status;
 }
 
