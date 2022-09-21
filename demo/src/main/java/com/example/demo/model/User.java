@@ -1,48 +1,46 @@
 package com.example.demo.model;
 
-import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table
+@Table(name = "users")
 @Getter
 @Setter
 public class User {
-
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column
+    @Column(nullable = false, unique = true, length = 45)
     private String userName;
 
-    @Column
+    @Column(nullable = false, unique = true, length = 45)
+    private String email;
+
+    @Column(nullable = false, length = 64)
     private String password;
 
-    @Column
-    private boolean active;
+    @Column(name = "first_name", nullable = true, length = 20)
+    private String firstName;
 
-    @Column
-    private String name;
-
-    @Column
+    @Column(name = "last_name", nullable = true, length = 20)
     private String lastName;
 
-    @Column
-    private long identification;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
 
-    @Column
-    private Date birth;
-
-    @Column
-    private String roles;
-
-
+    public void addRole(Role role) {
+        this.roles.add(role);
+    }
 }
+
