@@ -5,6 +5,9 @@
       <list>
         <option value="$PROJECT_DIR$/Proyecto/discoveryServer/pom.xml" />
         <option value="$PROJECT_DIR$/Proyecto/auth/pom.xml" />
+        <option value="$PROJECT_DIR$/Proyecto/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/Proyecto/book/pom.xml" />
+        <option value="$PROJECT_DIR$/Proyecto/auth/demo/pom.xml" />
       </list>
     </option>
   </component>

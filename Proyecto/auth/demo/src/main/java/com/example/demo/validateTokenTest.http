@@ -1,0 +1,19 @@
+POST http://localhost:8098/login
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "1234"
+}
+
+###
+GET http://localhost:8089/welcomeuser
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjY1NzQ0ODk2LCJpYXQiOjE2NjU3MDg4OTZ9.Qn4A58oqsKSZbe7REq1NTYC0KNmzTqt-lBWGLDlQP2Q
+
+###
+
+
+
+
+
+
