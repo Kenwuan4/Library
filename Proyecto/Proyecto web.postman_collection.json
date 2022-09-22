@@ -284,7 +284,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"birth\": \"2020-01-01\",\n    \"identification\" : 1234569,\n    \"last_name\": \"tester\",\n    \"name\": \"test\",\n    \"password\": \"1234\",\n    \"user_name\": \"user\"\n}",
+					"raw": "{\n    \"name\": \"prueba\",\n    \"lastname\": \"test\",\n    \"identificacion\": 1234,\n    \"birth\": \"2022-01-01\",\n    \"role\":\"DIRECTOR\",\n    \"status\":true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -307,7 +307,7 @@
 		{
 			"name": "InvalidateUser",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"url": {
 					"raw": "localhost:8082/staff/1",
@@ -329,13 +329,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/users",
+					"raw": "localhost:8082/staff",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
-						"users"
+						"staff"
 					]
 				}
 			},
@@ -375,7 +375,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 4,\n    \"userName\": 'test1234',\n    \"password\": \"12341234\"\n}",
+					"raw": "{\n    \"username\": \"user\",\n    \"password\": \"1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -399,7 +399,14 @@
 			"name": "welcomeuser Copy",
 			"request": {
 				"auth": {
-					"type": "bearer"
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjYzODQwOTg4LCJpYXQiOjE2NjM4MDQ5ODh9.iNViU8-ghzZ7EuYLsQtLvIVWyKuGc8r1QupRt07Uemc",
+							"type": "string"
+						}
+					]
 				},
 				"method": "GET",
 				"header": [],
