@@ -1,0 +1,13 @@
+GET http://localhost:8080/welcomeuser
+Authorization: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjY1NzQ1NTM3LCJpYXQiOjE2NjU3MDk1Mzd9.C-Uel4PUaE-F-F_iRctqaVcP8t9RRihoJDYDTZ2A5Xs"
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "1234"
+}
+
+###
