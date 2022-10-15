@@ -65,7 +65,6 @@ public class AuthGatewayFilterFactory extends
             else {
 
                 String authorizationHeader = request.getHeaders().get("Authorization").get(0);
-
                 try {
                     if (!this.isAuthorizationValid(authorizationHeader)) {
                         return this.onError(exchange, "Invalid Authorization header", HttpStatus.UNAUTHORIZED);
@@ -75,7 +74,6 @@ public class AuthGatewayFilterFactory extends
                 }
 
                 ServerHttpRequest modifiedRequest = exchange.getRequest().mutate().build();
-
                 return chain.filter(exchange.mutate().request(modifiedRequest).build());
             }
         };
