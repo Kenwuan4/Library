@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="authorization" />
+        <module name="editorial" />
+        <module name="book" />
+        <module name="staff" />
         <module name="demo" />
         <module name="discoveryServer" />
         <module name="gateway" />
-        <module name="book" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,7 +21,9 @@
       <module name="book" target="17" />
       <module name="demo" target="11" />
       <module name="discoveryServer" target="17" />
+      <module name="editorial" target="17" />
       <module name="gateway" target="17" />
+      <module name="staff" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -28,7 +32,9 @@
       <module name="book" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="discoveryServer" options="-parameters" />
+      <module name="editorial" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="staff" options="-parameters" />
     </option>
   </component>
 </project>

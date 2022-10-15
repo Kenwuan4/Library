@@ -11,16 +11,27 @@ import org.springframework.context.annotation.Configuration;
 public class Gateway {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder, AuthGatewayFilterFactory authFactory) {
-        //@formatter:off
-        // String uri = "http://httpbin.org:80";
-        // String uri = "http://localhost:9080";
+
         return builder.routes()
+                /*
+                .route("discoveryM",r -> r.path("/discoveryAPI/**").uri("lb://discoveryM")
+                )
+
+                 */
+                .route("authM",r -> r.path("/authAPI/**").uri("lb://authM")
+                )
                 .route("bookM",r -> r.path("/bookAPI/**").
                         filters(f -> f.filter(authFactory.apply(new AuthGatewayFilterFactory.Config()))).
                         uri("lb://bookM")
                 )
-                .route("authM",r -> r.path("/authAPI/**").uri("lb://authM")
-                        )
+                .route("editorialM",r -> r.path("/editorialAPI/**").
+                        filters(f -> f.filter(authFactory.apply(new AuthGatewayFilterFactory.Config()))).
+                        uri("lb://editorialM")
+                )
+                .route("staffM",r -> r.path("/staffAPI/**").
+                        filters(f -> f.filter(authFactory.apply(new AuthGatewayFilterFactory.Config()))).
+                        uri("lb://staffM")
+                )
                 .build();
     }
 }
