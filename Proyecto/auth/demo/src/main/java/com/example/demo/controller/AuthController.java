@@ -17,6 +17,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 
 @RestController
+@RequestMapping("/authAPI")
 public class AuthController {
 
     @Autowired
@@ -28,7 +29,7 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @PostMapping(value = "/login")
     public ResponseEntity<?> login(@RequestBody JwtRequest jwtRequest) throws Exception {
 
         System.out.println(jwtRequest);
@@ -50,22 +51,26 @@ public class AuthController {
         );
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @PostMapping(value = "/register")
     public ResponseEntity<?> register(@RequestBody User user){
 
         return ResponseEntity.ok(userService.saveUser(user));
     }
 
-    @PreAuthorize("hasAnyRole('USER')")
     @GetMapping("/validateToken")
     public ResponseEntity<?> validate() {
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("authorized");
+    }
+
+    @GetMapping(value = "/hola")
+    public ResponseEntity<?> hello() {
+        return ResponseEntity.ok("hola");
     }
 
 
     //Only ADMIN role can access this
     @PreAuthorize("hasAnyRole('MANAGER')")
-    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    @GetMapping(value = "/welcome")
     public String test(){
         return "Welcome with token !!";
     }
@@ -73,7 +78,7 @@ public class AuthController {
 
     //Only USER role can access this
     @PreAuthorize("hasAnyRole('USER')")
-    @RequestMapping(value = "/welcomeuser", method = RequestMethod.GET)
+    @GetMapping(value = "/welcomeuser")
     public String testuser(){
         return "Welcome with token USER !!";
     }
