@@ -1,0 +1,15 @@
+POST http://localhost:8080/book
+Content-Type: application/json
+
+{
+  "name": "Cien años de soledad",
+  "description": "Escrita por el gran esritor Gabriel Garcia Marquez",
+  "author": "https://maiag",
+  "url":"https",
+  "pages":200,
+  "price":77000,
+  "editorial":{
+    "id":200
+  }
+}
+
