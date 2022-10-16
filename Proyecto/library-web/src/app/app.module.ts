@@ -7,6 +7,8 @@ import { BooksComponent } from './books/books.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EditorialsComponent } from './editorials/editorials.component';
 import { StaffComponent } from './staff/staff.component';
+import { AuthComponent } from './auth/auth.component';
+import { StaffInfoComponent } from './staff-info/staff-info.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { StaffComponent } from './staff/staff.component';
     AppComponent,
     BooksComponent,
     EditorialsComponent,
-    StaffComponent
+    StaffComponent,
+    AuthComponent,
+    StaffInfoComponent
   ],
   imports: [
     BrowserModule,

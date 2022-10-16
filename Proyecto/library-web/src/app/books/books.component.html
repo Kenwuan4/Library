@@ -1,6 +1,15 @@
-<ul class = "books">
-    <li *ngFor="let book of books">
-        <span class = "badge"> {{book.id}} </span> {{book.name}}
-        
-    </li>
-</ul>
+<div>
+    <H1> Novedades</H1>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let book of books">
+        <div class="card h-100">
+            <img src={{book.url}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{book.name}}</h5>
+                <p class="card-text">{{book.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

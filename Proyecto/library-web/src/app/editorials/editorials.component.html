@@ -1,6 +1,12 @@
-<ul class = "editorial">
-    <li *ngFor="let editorial of editorials">
-        <span class = "badge"> {{editorial.id}} </span> {{editorial.name}}
-        
-    </li>
-</ul>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let editorial of editorials">
+        <div class="card h-100">
+            <img src={{editorial.url}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{editorial.name}}</h5>
+                <p class="card-text">{{editorial.url}}</p>
+            </div>
+        </div>
+    </div>
+</div>
