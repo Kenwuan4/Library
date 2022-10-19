@@ -53,7 +53,7 @@ public class AuthGatewayFilterFactory extends
 
             ServerHttpRequest request = exchange.getRequest();
 
-            if (!request.getHeaders().containsKey("Authorization") && request.getMethod().equals(HttpMethod.GET) && request.getPath().toString().contains("bookAPI")) {
+            if (!request.getHeaders().containsKey("Authorization") && request.getMethod().equals(HttpMethod.GET) && (request.getPath().toString().contains("bookAPI") || request.getPath().toString().contains("editorialAPI")) ){
                 return chain.filter(exchange);
             }
             else if (!request.getHeaders().containsKey("Authorization")) {

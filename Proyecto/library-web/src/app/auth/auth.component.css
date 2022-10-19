@@ -1,0 +1,14 @@
+#big-box {
+
+    width: 500px;
+    margin-top: 30px;
+  }
+
+#border {
+    margin-top: 150px;
+    width: 310px;
+    margin-left: 600px;
+    border: 2px solid #4287f5;
+    padding: 10px;
+    border-radius: 15px;
+}

@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("editorialAPI")
+@CrossOrigin("http://localhost:4200/")
 public class EditorialController {
 
     @Autowired

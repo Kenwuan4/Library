@@ -5,19 +5,16 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @Configuration
+@CrossOrigin("http://localhost:4200/")
 public class Gateway {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder, AuthGatewayFilterFactory authFactory) {
 
         return builder.routes()
-                /*
-                .route("discoveryM",r -> r.path("/discoveryAPI/**").uri("lb://discoveryM")
-                )
-
-                 */
                 .route("authM",r -> r.path("/authAPI/**").uri("lb://authM")
                 )
                 .route("bookM",r -> r.path("/bookAPI/**").
