@@ -13,6 +13,6 @@ export class AuthService {
     const headers = new HttpHeaders()
     const body = {"username": user, "password": password};
     const params = new HttpParams()
-    return this.http.post("http://localhost:8080/authAPI/login", body);
+    return this.http.post("http://localhost:8085/authAPI/login", body);
   }
 }
