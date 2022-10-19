@@ -73,8 +73,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * En este método se configruan los cors para permititir métodos, headers u otras configuraciones a traves des este
-     * @return void.
+     * En este método se configuran los cors para permitir métodos,
+     * headers u otras configuraciones HTTP a traves del filtro.
+     * @return CorsConfigurationSource Corresponde a la clase con las configuraciones realizadas.
      */
     @Bean
     CorsConfigurationSource corsConfigurationSource() {

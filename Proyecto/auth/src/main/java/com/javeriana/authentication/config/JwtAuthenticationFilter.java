@@ -18,7 +18,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+/**
+ * En esta clase se configura un filtro personalizado para validar el token
+ * los mecanismos necesarios para bloquear o aceptar peticiones http.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
@@ -27,7 +34,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
     private UserService customUserService;
-
+    /**
+     * En este método se toma el token, se extrae el usuario y contraseña para verificar la autenticación
+     * y determinar si el token es válido.
+     *@param  request Corresponde a la clase de la solicitud que llega al filtro
+     *@param  response Corresponde a la clase de la respuesta que sale del filtro
+     *@param  filterChain Corresponde a la clase que llama el ejejcuta el filtro
+     * @return void.
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         //get header
@@ -48,7 +62,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+                //válida que el usuario extraído del token este registrado, tenga los permisos correspondientes
+                // y modifica el SecurityContextHolder dependiendo del resultado
                 UserDetails user = this.customUserService.loadUserByUsername(userName);
                 if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                     System.out.println(user.getPassword());
