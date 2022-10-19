@@ -22,7 +22,14 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
-
+/**
+ * En esta clase de configuración de seguridad se configura
+ * los mecanismos necesarios para bloquear o aceptar peticiones http.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -33,7 +40,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
-
+    /**
+     * En este método se llama al microservicio de autenticación mediante el callerService
+     *@param  http Corresponde a la clase donde se configuran las restricciones con HTTP
+     * @return void.
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -46,7 +57,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
         http
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
@@ -62,7 +72,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-
+    /**
+     * En este método se configruan los cors para permititir métodos, headers u otras configuraciones a traves des este
+     * @return void.
+     */
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cc = new CorsConfiguration();

@@ -14,7 +14,13 @@ import reactor.core.publisher.Mono;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-
+/**
+ * Este Component es un filtro personalizado y usado en el gateway para procesar las peticiones entrantes.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Component
 public class AuthGatewayFilterFactory extends
         AbstractGatewayFilterFactory<AuthGatewayFilterFactory.Config> {
@@ -29,7 +35,11 @@ public class AuthGatewayFilterFactory extends
         this.callerService = callerService;
     }
 
-
+    /**
+     * En este método se llama al microservicio de autenticación mediante el callerService
+     *@param  authorizationToken Corresponde al token a validar por el microservicio de autenticación.
+     * @return boolean retorna un flag que indica si el token fue validado por el microservicio o no.
+     */
     private boolean isAuthorizationValid(String authorizationToken) throws URISyntaxException {
         return callerService.callAuthValidateToken(authorizationToken);
     }
@@ -45,7 +55,15 @@ public class AuthGatewayFilterFactory extends
         return response.setComplete();
 
     }
-
+    /**
+     * En este método se procesa las solicitudes que han llegado al gateway.
+     * En caso de que una solicitud contenga un header Authorization valida el token
+     * para responder dependiendo de la validez y permisos del token
+     *@param  config Corresponde a una clase de configuración para el filtro.
+     * @return GatewayFilter retorna una respuesta positiva si hay authorización
+     * y en otro caso 401 Unauthorized si el token es inválido o no se tienen
+     * los permisos correspondientes.
+     */
     @Override
     public GatewayFilter apply(Config config) {
 

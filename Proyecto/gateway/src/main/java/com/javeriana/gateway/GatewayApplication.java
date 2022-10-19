@@ -10,7 +10,6 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 
 public class GatewayApplication {
-
 	@Bean
 	public RestTemplate restTemplate(){
 		return new RestTemplate();
