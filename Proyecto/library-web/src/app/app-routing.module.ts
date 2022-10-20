@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: 'staff', component: StaffComponent},
   {path: 'staffInfo', component: StaffInfoComponent},
   {path: 'book-info/:id', component:BookInfoComponent},
-  {path: 'login', component: AuthComponent}
+  {path: 'login', component: AuthComponent},
+  {path: 'books/search/:title'}
 ];
 
 @NgModule({
