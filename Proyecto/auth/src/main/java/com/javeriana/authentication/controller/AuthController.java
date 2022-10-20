@@ -14,7 +14,14 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
+/**
+ * En esta clase se configura un filtro personalizado para validar el token
+ * los mecanismos necesarios para bloquear o aceptar peticiones http.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 
 @RestController
 @RequestMapping("/authAPI")
@@ -30,6 +37,10 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    /**
+     * En este método HTTP se realiza la autenticación
+     @param  jwtRequest Corresponde a la clase que contiene las credenciales usuario y contraseña.
+     */
     @PostMapping(value = "/login")
     public ResponseEntity<?> login(@RequestBody JwtRequest jwtRequest) throws Exception {
 
