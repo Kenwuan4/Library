@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +16,8 @@ export class AuthComponent implements OnInit {
   });
 
   constructor(private formBuilder: FormBuilder,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private cookieService: CookieService) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +33,9 @@ export class AuthComponent implements OnInit {
     this.authService.login(userParam, passParam).subscribe(
                         data => {
                                   console.log(data);
+                                  let cookie =''+data;
+                                  this.cookieService.set("cookie",cookie);
+                                  console.log(this.cookieService.get("cookie"))
                                 });
     this.loginForm.reset();
 }

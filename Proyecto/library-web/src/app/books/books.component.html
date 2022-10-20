@@ -6,10 +6,11 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let book of books">
         <div class="card h-100">
-            <img src={{book.url}} class="card-img-top" alt="..." height=400px width="400px">
+            <img src={{book.url}} class="card-img-top" alt="..." height=400px width="100px">
             <div class="card-body">
                 <h5 class="card-title">{{book.name}}</h5>
                 <p class="card-text">{{book.description}}</p>
+                <a routerLink = "/book-info/{{book.id}}" role="button">Ver detalle</a>
             </div>
         </div>
     </div>

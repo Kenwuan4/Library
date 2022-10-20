@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Staff } from '../models/Staff';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,4 +13,6 @@ export class StaffService {
   getStaff(): Observable<Staff[]>{
     return this.http.get<Staff[]>("http://localhost:8082/staff");
   }
+
+
 }
