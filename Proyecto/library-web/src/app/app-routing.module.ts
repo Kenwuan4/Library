@@ -8,14 +8,14 @@ import { AuthComponent } from './auth/auth.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/books', pathMatch: 'full'},
-  {path: 'books', component:BooksComponent},
-  {path: 'editorials', component: EditorialsComponent},
-  {path: 'staff', component: StaffComponent},
-  {path: 'staffInfo', component: StaffInfoComponent},
-  {path: 'book-info/:id', component:BookInfoComponent},
-  {path: 'login', component: AuthComponent},
-  {path: 'books/search/:title'}
+  { path: '', redirectTo: '/books', pathMatch: 'full' },
+  { path: 'books', component: BooksComponent },
+  { path: 'editorials', component: EditorialsComponent },
+  { path: 'staff', component: StaffComponent },
+  { path: 'staffInfo', component: StaffInfoComponent },
+  { path: 'book-info/:id', component: BookInfoComponent },
+  { path: 'login', component: AuthComponent },
+  { path: 'books/search/:title', component: BooksComponent }
 ];
 
 @NgModule({

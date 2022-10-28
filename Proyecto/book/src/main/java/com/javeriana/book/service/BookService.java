@@ -25,6 +25,10 @@ public class BookService {
         return Arrays.asList(objects);
     }
 
+    public List<Book> getBooksByName(String name){
+        return this.bookRepository.findBooksByNameContaining(name);
+    }
+
     public Book getBookbyId(int id){
         return bookRepository.findBooksById(id);
     }

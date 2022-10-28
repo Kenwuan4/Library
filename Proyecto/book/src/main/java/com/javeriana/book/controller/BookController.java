@@ -37,6 +37,11 @@ public class BookController {
         return bookService.getEditoriales();
     }
 
+    @GetMapping("/books/search/{name}")
+    private List<Book> getBooksByName(@PathVariable("name") String name){
+        return bookService.getBooksByName(name);
+    }
+
     @GetMapping("/books/price/{price}")
     private List<Book> getBooksByPrice (@PathVariable("price") double price){
         return bookService.getBookByPrice(price);
