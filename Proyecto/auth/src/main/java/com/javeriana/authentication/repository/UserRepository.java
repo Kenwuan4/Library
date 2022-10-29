@@ -1,6 +1,7 @@
 package com.javeriana.authentication.repository;
 
 
+import com.javeriana.authentication.model.Role;
 import com.javeriana.authentication.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -3,15 +3,20 @@ package com.javeriana.authentication.controller;
 import com.javeriana.authentication.helper.JwtUtil;
 import com.javeriana.authentication.model.JwtRequest;
 import com.javeriana.authentication.model.JwtResponse;
+import com.javeriana.authentication.model.Role;
 import com.javeriana.authentication.model.User;
 import com.javeriana.authentication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 /**
@@ -36,6 +41,19 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userService);
+        authProvider.setPasswordEncoder(encoder());
+        return authProvider;
+    }
 
     /**
      * En este método HTTP se realiza la autenticación
@@ -69,8 +87,17 @@ public class AuthController {
 
     @PostMapping(value = "/register")
     public ResponseEntity<?> register(@RequestBody User user){
-
         return ResponseEntity.ok(userService.saveUser(user));
+    }
+
+    @PostMapping(value = "/role")
+    public ResponseEntity<?> role(@RequestBody Role role){
+        return ResponseEntity.ok(userService.saveRole(role));
+    }
+
+    @GetMapping("/roles")
+    public ResponseEntity<?> roles() {
+        return ResponseEntity.ok(userService.getRoles());
     }
 
     @GetMapping("/validateToken")
