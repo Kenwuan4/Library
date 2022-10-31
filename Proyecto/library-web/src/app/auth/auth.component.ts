@@ -30,14 +30,13 @@ export class AuthComponent implements OnInit {
     console.log('FormValue:', this.loginForm.value);
     console.log('Login:', userParam);
     console.log('Password:', passParam);
+    
     this.authService.login(userParam, passParam).subscribe(
-                        data => {
-                                  console.log(data);
-                                  let cookie =''+data;
-                                  this.cookieService.set("cookie",cookie);
-                                  console.log(this.cookieService.get("cookie"))
-                                });
+      data => {
+        this.cookieService.set("token",data.token);
+      });
     this.loginForm.reset();
 }
+
 
 }

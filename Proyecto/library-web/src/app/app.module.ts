@@ -12,6 +12,7 @@ import { AuthComponent } from './auth/auth.component';
 import { StaffInfoComponent } from './staff-info/staff-info.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
