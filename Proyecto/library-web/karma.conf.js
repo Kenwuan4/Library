@@ -32,6 +32,16 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    coverageIstanbulReporter: {
+      reports: [ 'html', 'lcovonly' ],
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 75,
+        lines: 75,
+        branches: 75,
+        functions: 75
+      }
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
@@ -39,6 +49,6 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
   });
 };

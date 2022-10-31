@@ -1,9 +1,9 @@
 export interface Staff {
     id: number,
-    name: string,
-    lastname: string,
-    identification: number,
-    birth: Date,
-    role: string,
-    status: boolean
+    userName: string,
+    email: string,
+    password: string,
+    firstName: string,
+    lastName: string,
+    roles: []
 }
