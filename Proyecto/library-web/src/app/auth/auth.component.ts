@@ -33,21 +33,11 @@ export class AuthComponent implements OnInit {
 
 
     this.authService.login(userParam, passParam).subscribe(
-                        (data) => {
-                                  
-                                  let cookie:string = (data["token"] as string);
-                                  this.cokieService.set("cookie",cookie);
-                                  console.log(this.cokieService.get("cookie"))
-                                  this.loginForm.reset();
-                                  this.router.navigateByUrl('/books');
-                                },
-                        (error) => {
-                                  alert("Usuario o contraseña erroneos");
-                                  this.loginForm.reset();
-                                });
-
-    
-    
+      data => {
+        this.cokieService.set("token",data.token);
+      });
+    this.loginForm.reset();
 }
+
 
 }

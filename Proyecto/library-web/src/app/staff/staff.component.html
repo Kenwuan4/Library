@@ -1,51 +1,47 @@
-<form class="needs-validation" [formGroup]="registerForm" novalidate id ="register" (ngSubmit)="onSumbit()">
-    <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">Nombre</label>
-      <input type="text" class="form-control" formControlName ="firstName" required>
-      <div class="valid-feedback">
-        Se ve bien.
-      </div>
-    </div>
-    <div class="col-md-4">
-      <label for="validationCustom02" class="form-label">Apellido</label>
-      <input type="text" class="form-control" formControlName ="lastName"  required>
-      <div class="valid-feedback">
-        Se ve bien.
-      </div>
-    </div>
+<div class="card text-bg-light mb-3" style="max-width: 30rem;" id="border">
+  <form class = "custom-form"  [formGroup]="registerForm" novalidate (ngSubmit)="onSumbit()">
 
-    <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">Usuario</label>
-      <div class="input-group has-validation">
+      <!-- Title -->
+      <div class="col-md-12 text-center">
+        <h5> Registrarse en la Libreria PUJ</h5>
+      </div>
+
+      <!-- Name -->
+      <div class="form-outline mb-4">
+        <label for="validationCustom01" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName ="firstName" required>
+      </div>
+
+      <!-- LastName -->
+      <div class="form-outline mb-4">
+        <label for="validationCustom02" class="form-label">Apellido</label>
+        <input type="text" class="form-control" formControlName ="lastName"  required>
+      </div>
+
+      <!-- UserName -->
+      <div class="form-outline mb-4">
+        <label for="validationCustomUsername" class="form-label">Nombre de usuario</label>
         <input type="text" class="form-control" formControlName ="userName" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Escoge una usuario.
-        </div>
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">Correo</label>
-      <div class="input-group has-validation">
+      <!-- Email -->
+      <div class="form-outline mb-4">
+        <label for="validationCustomUsername" class="form-label">Correo</label>
         <input type="email" class="form-control" formControlName="email" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-           ingresa un correo valido.
-        </div>
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">Contraseña</label>
-      <div class="input-group has-validation">
+
+      <!-- Password -->
+      <div class="form-outline mb-4">
+        <label for="validationCustomUsername" class="form-label">Contraseña</label>
         <input type="password" class="form-control" formControlName ="password" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-           ingresa una contraseña valida.
-        </div>
       </div>
-    </div>
 
 
-    <div class="col-12" id="sumbit">
-      <button class="btn btn-primary" type="submit">Crear usuario</button>
-    </div>
+      <!-- Submit -->
+      <div class="col-md-12 text-center">
+        <button class="btn btn-primary" type="submit">Registrarse</button>
+      </div>
+
   </form>
+</div>

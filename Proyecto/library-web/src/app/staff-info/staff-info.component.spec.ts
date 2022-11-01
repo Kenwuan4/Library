@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { StaffInfoComponent } from './staff-info.component';
 
 describe('StaffInfoComponent', () => {
@@ -8,7 +9,8 @@ describe('StaffInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StaffInfoComponent ]
+      declarations: [ StaffInfoComponent ],
+      imports: [HttpClientTestingModule,ReactiveFormsModule]
     })
     .compileComponents();
 

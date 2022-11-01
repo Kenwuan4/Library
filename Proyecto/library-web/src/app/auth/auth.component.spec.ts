@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth.component';
 
 describe('AuthComponent', () => {
@@ -8,7 +9,8 @@ describe('AuthComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuthComponent ]
+      declarations: [ AuthComponent ],
+      imports: [HttpClientTestingModule, ReactiveFormsModule ]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('AuthComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create1234', () => {
     expect(component).toBeTruthy();
   });
 });

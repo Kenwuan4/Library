@@ -34,23 +34,24 @@ export class StaffComponent implements OnInit {
     
   }
   onSumbit():void{
-    let userParam: string;
+    let firstNameParam: string;
     let passParam: string;
     let lastName: string;
     let email: string;
     let userName: string;
 
-    userParam = ''+this.registerForm.value.firstName;
+    firstNameParam = ''+this.registerForm.value.firstName;
     passParam = this.encrypt.encryptUsingAES256(''+this.registerForm.value.password);
 
     lastName = ''+this.registerForm.value.lastName;
     email = ''+this.registerForm.value.email;
     userName = ''+this.registerForm.value.email;
-
+/*
     console.log('FormValue:', this.registerForm.value);
-    console.log('Login:', userParam);
+    console.log('Login:', firstNameParam);
     console.log('Password:', passParam);
-    this.authService.register(userParam, passParam, lastName, email, userName).subscribe(
+*/
+    this.authService.register(firstNameParam, lastName, email, userName,passParam).subscribe(
                         data => {
                                   console.log(data);
                                   this.registerForm.reset();
