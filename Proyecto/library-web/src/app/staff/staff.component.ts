@@ -4,6 +4,7 @@ import { StaffService } from '../services/staff.service';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder } from '@angular/forms';
 import { EncryptService } from '../services/encrypt.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class StaffComponent implements OnInit {
   constructor(private staffService: StaffService,
               private formBuilder: FormBuilder,
               private authService: AuthService, 
-              private encrypt: EncryptService) { }
+              private encrypt: EncryptService,
+              private router: Router) { }
 
   ngOnInit(): void {
     
@@ -51,8 +53,10 @@ export class StaffComponent implements OnInit {
     this.authService.register(userParam, passParam, lastName, email, userName).subscribe(
                         data => {
                                   console.log(data);
+                                  this.registerForm.reset();
+                                  this.router.navigateByUrl('/login');
                                 });
-    this.registerForm.reset();
+    
   }
 
   getStaff():void{

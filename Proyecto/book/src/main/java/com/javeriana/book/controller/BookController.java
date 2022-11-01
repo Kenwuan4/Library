@@ -27,10 +27,10 @@ public class BookController {
         return bookService.getBookbyId(id);
     }
 
-     /*@GetMapping("/books/editorials/{name}")
+    @GetMapping("/books/editorials/{name}")
     private List<Book> getBooksByEditorial(@PathVariable("name") String editorial){
         return bookService.getBooksByEditorial(editorial);
-    }*/
+    }
 
     @GetMapping("/books/editorials")
     private List<Object> getEditoriales(){

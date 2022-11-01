@@ -18,8 +18,8 @@
                     </ul>
                 </div>
                 <div class="col-sm-5" style="position: relative; width: 100%;">
-                    <form class="d-flex" role="search" (submit)="onSumbit()">
-                        <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search">
+                    <form class="d-flex" role="search" [formGroup]="searchForm" (submit)="onSumbit()" >
+                        <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search" formControlName="search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
                 </div>
@@ -33,9 +33,11 @@
                         Mi cuenta
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" routerLink="/login">Iniciar Sesión</a></li>
-                        <li><a class="dropdown-item" routerLink="/staff">Crear cuenta</a></li>
-                        <li><a class="dropdown-item" href="#" hidden=tue>Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" routerLink="/login" *ngIf="!cerrarSesion">Iniciar Sesión</a></li>
+                        <li><a class="dropdown-item" routerLink="/staff" *ngIf="!cerrarSesion">Crear cuenta</a></li>
+                        <li><a class="dropdown-item" routerLink="/staff-info" *ngIf="cerrarSesion"> Mi perfil</a></li>
+                        <li><hr class="dropdown-divider" *ngIf="cerrarSesion" ></li>
+                        <li><a class="dropdown-item" *ngIf="cerrarSesion" (click)="cerrar()">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>

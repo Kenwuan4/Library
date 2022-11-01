@@ -1,12 +1,14 @@
 package com.javeriana.book.service;
 
 import com.javeriana.book.model.Book;
+import com.javeriana.book.model.Editorial;
 import com.javeriana.book.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -32,21 +34,18 @@ public class BookService {
     public Book getBookbyId(int id){
         return bookRepository.findBooksById(id);
     }
-    /*public List<Book> getBooksByEditorial(String editorial){
 
 
-        Object[] objects = restTemplate.getForObject("http://editorialM/editorials/editorial", Object[].class);
-        if (editorial != null)
+    public List<Book> getBooksByEditorial(String editorial){
+        Editorial objects = restTemplate.getForObject("http://editorialM/editorialAPI/editorials/"+editorial, Editorial.class);
 
-            return bookRepository.findByEditorialId(editorials.getId());
-        else {
+        if (objects.getId() != null)
+            return this.bookRepository.findByEditorialId(objects.getId());
+        else
             return Collections.emptyList();
-        }
-
-    }*/
+    }
 
     public List<Book> getBookByPrice(double price){
-
         return bookRepository.findBooksByPriceIsLessThanEqual(price);
     }
 

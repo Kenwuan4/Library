@@ -7,19 +7,14 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
-@Table
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class Editorial {
 
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column
     private String name;
+    private String webSite;
+    private String img;
 }

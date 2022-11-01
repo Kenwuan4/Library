@@ -21,4 +21,11 @@ public class Editorial {
 
     @Column
     private String name;
+
+    @Column
+    private String webSite;
+
+    @Column
+    private String img;
+
 }

@@ -12,6 +12,7 @@ import { AuthComponent } from './auth/auth.component';
 import { StaffInfoComponent } from './staff-info/staff-info.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BookFormComponent } from './book-form/book-form.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     AuthComponent,
     StaffInfoComponent,
     BookInfoComponent,
-    NavBarComponent
+    NavBarComponent,
+    BookFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,12 @@
-<div>
+<div id="titulo">
     <H1> Novedades</H1>
 
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let book of books">
-        <div class="card h-100">
-            <img src={{book.url}} class="card-img-top" alt="..." height=400px width="100px">
+<div class="row row-cols-1 row-cols-md-4 g-4" >
+    <div class="col" *ngFor="let book of books" id="card" >
+        <div class="card h-55" >
+            <img src={{book.url}} class="card-img-top"  height=450pd width="2pd">
             <div class="card-body">
                 <h5 class="card-title">{{book.name}}</h5>
                 <p class="card-text">{{book.description}}</p>

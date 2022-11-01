@@ -17,6 +17,14 @@
                 <h4>Descripción:</h4>
                 <h6> {{book.description}} </h6>
             </div>
+
+            <div>
+
+                <button type="button" class="btn btn-success" *ngIf="cookie" routerLink="/book/create" >Crear</button>
+                <button type="button" class="btn btn-warning" *ngIf="cookie" routerLink="/book/edit/{{book.id}}" >Editar</button>
+                <button type="button" class="btn btn-danger" *ngIf="cookie" (click)="deleteBook(book.id)">Eliminar </button>
+
+            </div>
         </div>
 
     </div>
