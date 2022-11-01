@@ -33,7 +33,7 @@ import { BookFormComponent } from './book-form/book-form.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
