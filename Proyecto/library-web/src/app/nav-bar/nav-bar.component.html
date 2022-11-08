@@ -18,7 +18,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-5" style="position: relative; width: 100%;">
-                    <form class="d-flex" role="search" [formGroup]="searchForm" (submit)="onSumbit()" >
+                    <form class="d-flex" role="search" [formGroup]="searchForm" (ngSubmit)="onSumbit()" >
                         <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search" formControlName="search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>

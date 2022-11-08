@@ -49,6 +49,7 @@ public class BookController {
 
     @DeleteMapping("/book/{bookid}")
     private void deleteBook(@PathVariable("bookid") int id){
+        System.out.println(id + "hola");
         bookService.deleteBook(id);
     }
 

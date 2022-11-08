@@ -45,12 +45,8 @@ export class StaffComponent implements OnInit {
 
     lastName = ''+this.registerForm.value.lastName;
     email = ''+this.registerForm.value.email;
-    userName = ''+this.registerForm.value.email;
-/*
-    console.log('FormValue:', this.registerForm.value);
-    console.log('Login:', firstNameParam);
-    console.log('Password:', passParam);
-*/
+    userName = ''+this.registerForm.value.userName;
+
     this.authService.register(firstNameParam, lastName, email, userName,passParam).subscribe(
                         data => {
                                   console.log(data);

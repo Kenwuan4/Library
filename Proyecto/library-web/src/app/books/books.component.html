@@ -1,20 +1,19 @@
 <div id="titulo">
-    <H1> Novedades</H1>
+    <H1> {{title}}</H1>
 
+    <button type="button" class="btn btn-success" *ngIf="cookie" routerLink="/book/create"> Crear </button>
 </div>
 
-<div class="row row-cols-1 row-cols-md-4 g-4" >
-    <div class="col" *ngFor="let book of books" id="card" >
-        <div class="card h-55" >
-            <img src={{book.url}} class="card-img-top"  height=450pd width="2pd">
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let book of books" id="card">
+        <div class="card h-55">
+            <img src={{book.url}} class="card-img-top" height=450pd width="2pd">
             <div class="card-body">
                 <h5 class="card-title">{{book.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted"> </h6>
                 <p class="card-text">{{book.description}}</p>
-                <a routerLink = "/book-info/{{book.id}}" role="button">Ver detalle</a>
+                <a routerLink="/book-info/{{book.id}}" role="button">Ver detalle</a>
             </div>
         </div>
     </div>
 </div>
-
-
-

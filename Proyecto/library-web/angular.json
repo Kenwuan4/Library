@@ -28,8 +28,9 @@
             ],
             "scripts": [
               "./node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js", 
-              "node_modules/crypto-js/crypto-js.js"]
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/crypto-js/crypto-js.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -66,6 +67,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "library-web:build",
+            "proxyConfig": "src/proxyConfg.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "library-web:build:production"

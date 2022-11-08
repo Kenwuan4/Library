@@ -10,15 +10,14 @@ import { BookFormComponent } from './book-form/book-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full' },
-  { path: 'books', component: BooksComponent },
+  { path: 'books', component: BooksComponent , children:[{path: 'search/:title', component: BooksComponent}]},
   { path: 'book/create', component: BookFormComponent},
   { path: 'book/edit/:id', component: BookFormComponent},
   { path: 'editorials', component: EditorialsComponent },
   { path: 'staff', component: StaffComponent },
   { path: 'staff-Info', component: StaffInfoComponent },
   { path: 'book-info/:id', component: BookInfoComponent },
-  { path: 'login', component: AuthComponent },
-  { path: 'books/search/:title', component: BooksComponent }
+  { path: 'login', component: AuthComponent }
 ];
 
 @NgModule({

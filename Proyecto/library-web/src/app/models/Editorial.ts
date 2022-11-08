@@ -1,5 +1,6 @@
-export interface Editorial{
+export interface Editorial {
     id: number,
-    name: string, 
-    url: string
+    name: string,
+    url: string,
+    webSite: string
 }

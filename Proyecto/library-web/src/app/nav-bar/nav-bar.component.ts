@@ -23,19 +23,24 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
   ngDoCheck():void{
-    if (this.cokieService.get("cookie").length > 0){
+    if (this.cokieService.get("token").length > 0){
+      
       this.cerrarSesion = true;
     }
     else{
       this.cerrarSesion = false;
     }
   }
-  onSumbit(){
 
+  onSumbit(){
+    let search:string = ''+this.searchForm.value.search;
+    this.router.navigateByUrl('/books/search/'+search);
   }
+  
   cerrar():void{
-    this.cokieService.delete("cookie");
+    this.cokieService.delete("token");
     this.router.navigateByUrl('/books');
   }
 

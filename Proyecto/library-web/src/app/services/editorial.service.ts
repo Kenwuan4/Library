@@ -10,7 +10,15 @@ export class EditorialService {
 
   constructor(private http: HttpClient) { }
 
-  getEditorials():Observable<Editorial[]>{
-    return this.http.get<Editorial[]>("http://localhost:8080/editorialAPI/editorials");
+  getEditorials(): Observable<Editorial[]> {
+    return this.http.get<Editorial[]>("http://localhost:8080/editorialAPI/editorials", { headers: { skip: "true" } });
+  }
+
+  getEditorialByName(name: string): Observable<Editorial> {
+    return this.http.get<Editorial>("http://localhost:8080/editorialAPI/editorials/" + name, { headers: { skip: "true" } });
+  }
+
+  deleteEditorial(id: number): void {
+    this.http.delete("http://localhost:8080/editorialAPI/editorial/" + id);
   }
 }

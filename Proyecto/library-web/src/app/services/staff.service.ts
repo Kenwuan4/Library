@@ -11,7 +11,7 @@ export class StaffService {
   constructor(private http: HttpClient) { }
 
   getStaff(): Observable<Staff[]>{
-    return this.http.get<Staff[]>("http://localhost:8082/staff");
+    return this.http.get<Staff[]>("http://localhost:8082/staff", {headers:{skip:"true"}});
   }
 
 

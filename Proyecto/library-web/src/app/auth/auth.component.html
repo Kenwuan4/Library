@@ -1,6 +1,5 @@
-
 <div class="card text-bg-light mb-3" style="max-width: 30rem;" id="border">
-  <form class = "custom-form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form class="custom-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
     <!-- Title -->
     <div class="col-md-12 text-center">
@@ -10,20 +9,18 @@
     <!-- Email input -->
     <div class="form-outline mb-4">
       <label for="inputEmail3" class="form-label">Nombre de usuario</label>
-      <input type="email"  class="form-control" formControlName = "login"/>
+      <input type="email" class="form-control" formControlName="login" />
     </div>
-  
+
     <!-- Password input -->
     <div class="form-outline mb-4">
       <label for="inputPassword3" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" formControlName = "password" />
+      <input type="password" class="form-control" formControlName="password" />
     </div>
 
     <!-- Submit button -->
     <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-primary">Iniciar</button>
+      <button type="submit" class="btn btn-primary">Iniciar sesión</button>
     </div>
   </form>
 </div>
-
-  
