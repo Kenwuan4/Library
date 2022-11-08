@@ -56,7 +56,7 @@ export class BookFormComponent implements OnInit {
       this.getBookById();
     }
     else {
-      this.title = 'Ingresar nuevo libro';
+      this.title = 'Crear libro';
     }
   }
 

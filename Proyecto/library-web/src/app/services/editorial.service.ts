@@ -18,6 +18,20 @@ export class EditorialService {
     return this.http.get<Editorial>("http://localhost:8080/editorialAPI/editorials/" + name, { headers: { skip: "true" } });
   }
 
+  getEditorialById(id:number): Observable<Editorial>{
+    return this.http.get<Editorial>("http://localhost:8080/editorialAPI/editorial/" + id, { headers: { skip: "true" } });
+  }
+
+  putEditorial(id:number, name:string, url:string, webSite:string):Observable<Editorial>{
+    const body = {"id":id, "name":name, "url":url, "webSite":webSite};
+    return this.http.put<Editorial>("http://localhost:8080/editorialAPI/editorial/", body);
+  }
+
+  postEditorial(name:string, url:string, webSite:string):Observable<Editorial>{
+    const body = {"name":name, "url":url, "webSite":webSite};
+    return this.http.post<Editorial>("http://localhost:8080/editorialAPI/editorial/", body);
+  }
+
   deleteEditorial(id: number): void {
     this.http.delete("http://localhost:8080/editorialAPI/editorial/" + id);
   }
