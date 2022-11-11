@@ -1,7 +1,18 @@
 <div id="titulo">
-    <H1> {{title}}</H1>
+    <div class="col-sm-5" style="position: relative; width: 100%;">
+        <H1> {{title}}</H1>
+    </div>
+
+    <div class="col-sm-5" style="position: relative; width: 100%;">
+        <form class="d-flex" role="search" [formGroup]="searchForm" (ngSubmit)="onSumbit()">
+            <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search"
+                formControlName="search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+    </div>
 
     <button type="button" class="btn btn-success" *ngIf="cookie" routerLink="/book/create"> Crear </button>
+
 </div>
 
 <div class="row row-cols-1 row-cols-md-4 g-4">

@@ -18,6 +18,7 @@ public class StaffService {
         return staffRepository.findAll();
     }
 
+    public Staff getStaffById(Integer id){return staffRepository.findStaffById(id); }
     public Staff saveStaff(Staff staff){
         return  staffRepository.save(staff);
     }

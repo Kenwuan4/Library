@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table
+@Table(name="staf")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -28,14 +28,14 @@ public class Staff {
     @Column (nullable = true)
     private String lastname;
 
-    @Column
+    @Column (nullable = true)
     private long identification;
 
-    @Column
+    @Column (nullable = true)
     private Date birth;
 
     @Column
-    private String role;
+    private String email;
 
     @Column
     private boolean status;

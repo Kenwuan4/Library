@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Editorial } from '../models/Editorial';
 import { EditorialService } from '../services/editorial.service';
 import { CokieService } from '../services/cokie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editorials',
@@ -14,7 +15,8 @@ export class EditorialsComponent implements OnInit {
   public cookie: boolean = false;
 
   constructor(private editorialService: EditorialService,
-    private cokieService: CokieService) { }
+    private cokieService: CokieService,
+    private router: Router) { }
 
 
   ngDoCheck(): void {
@@ -35,7 +37,8 @@ export class EditorialsComponent implements OnInit {
   }
 
   deleteEditorial(id: number): void {
-
+    this.editorialService.deleteEditorial(id);
+    this.router.navigateByUrl("/editorials");
 
   }
 

@@ -1,6 +1,6 @@
 <div>
     <h1> Editoriales </h1>
-    <button type="button" class="btn btn-success" *ngIf="cookie" routerLink="/book/create"> Crear </button>
+    <button type="button" class="btn btn-success" *ngIf="cookie" routerLink="/editorial/create"> Crear </button>
 
 </div>
 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -10,7 +10,10 @@
             <div class="card-body">
                 <h5 class="card-title">{{editorial.name}}</h5>
                 <p class="card-text">{{editorial.url}}</p>
-                <button type="button" class="btn btn-warning" *ngIf="cookie" routerLink=""> Editar </button>
+                <button type="button" class="btn btn-warning" *ngIf="cookie"
+                    routerLink="/editorial/edit/{{editorial.id}}">
+                    Editar
+                </button>
                 <button type="button" class="btn btn-danger" *ngIf="cookie" (click)="deleteEditorial(editorial.id)">
                     Eliminar </button>
             </div>

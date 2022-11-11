@@ -5,6 +5,7 @@ import com.javeriana.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -54,12 +55,15 @@ public class BookController {
     }
 
     @PostMapping("/book")
-    private Book saveBook(@RequestBody Book books)
+    @CrossOrigin("http://localhost:4200/")
+    @ResponseBody
+    private Book saveBook(@RequestBody Book books, HttpServletResponse response)
     {
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         return bookService.save(books);
     }
 
-    @PutMapping("/book")
+    @PutMapping("/update/book")
     private Book updateBook(@RequestBody Book books)
     {
         return bookService.update(books);

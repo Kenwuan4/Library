@@ -10,36 +10,31 @@ import { FormBuilder } from '@angular/forms';
 })
 export class NavBarComponent implements OnInit {
 
-  title:string='';
+  title: string = '';
   public cerrarSesion: boolean = false;
-  searchForm = this.formBuilder.group({
-    search:''
-  });
+
 
   constructor(private cokieService: CokieService,
-              private router: Router,
-              private formBuilder: FormBuilder) { }
+    private router: Router,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
   }
 
-  ngDoCheck():void{
-    if (this.cokieService.get("token").length > 0){
-      
+  ngDoCheck(): void {
+    if (this.cokieService.get("token").length > 0) {
+
       this.cerrarSesion = true;
     }
-    else{
+    else {
       this.cerrarSesion = false;
     }
   }
 
-  onSumbit(){
-    let search:string = ''+this.searchForm.value.search;
-    this.router.navigateByUrl('/books/search/'+search);
-  }
-  
-  cerrar():void{
+
+  cerrar(): void {
+    console.log("hola");
     this.cokieService.delete("token");
     this.router.navigateByUrl('/books');
   }

@@ -7,6 +7,7 @@ import org.springframework.http.*;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -22,6 +23,7 @@ import java.net.URISyntaxException;
  * @since   2022-10-16
  */
 @Component
+@CrossOrigin("http://localhost:4200/")
 public class AuthGatewayFilterFactory extends
         AbstractGatewayFilterFactory<AuthGatewayFilterFactory.Config> {
 
@@ -65,13 +67,14 @@ public class AuthGatewayFilterFactory extends
      * los permisos correspondientes.
      */
     @Override
+    @CrossOrigin("http://localhost:4200/")
     public GatewayFilter apply(Config config) {
 
         return (exchange, chain) -> {
 
             ServerHttpRequest request = exchange.getRequest();
 
-            if (!request.getHeaders().containsKey("Authorization") && request.getMethod().equals(HttpMethod.GET) && (request.getPath().toString().contains("bookAPI") || request.getPath().toString().contains("editorialAPI")) ){
+            if (!request.getHeaders().containsKey("Authorization") && (( ( request.getMethod().equals(HttpMethod.GET)  || request.getMethod().equals(HttpMethod.POST) ) && (request.getPath().toString().contains("bookAPI") || request.getPath().toString().contains("editorialAPI"))) || (request.getPath().toString().contains("staffAPI") &&  request.getMethod().equals(HttpMethod.POST)))){
                 return chain.filter(exchange);
             }
             else if (!request.getHeaders().containsKey("Authorization")) {
@@ -98,10 +101,12 @@ public class AuthGatewayFilterFactory extends
 
     }
 
+
     public static class Config {
 
         public Config() {
             // This class is for put the configuration properties
-        }
+
+            }
     }
 }

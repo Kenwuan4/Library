@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { CokieService } from '../services/cokie.service';
-
+import { EncryptService } from '../services/encrypt.service';
 
 @Component({
   selector: 'app-auth',
@@ -20,7 +20,8 @@ export class AuthComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService,
     private cokieService: CokieService,
-    private router: Router) { }
+    private router: Router,
+    private encrypt: EncryptService) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +30,7 @@ export class AuthComponent implements OnInit {
     let userParam: string;
     let passParam: string;
     userParam = '' + this.loginForm.value.login;
-    passParam = '' + this.loginForm.value.password;
+    passParam = this.encrypt.encryptUsingAES256('' + this.loginForm.value.password);
 
 
     this.authService.login(userParam, passParam).subscribe(

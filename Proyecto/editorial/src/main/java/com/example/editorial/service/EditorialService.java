@@ -25,6 +25,7 @@ public class EditorialService {
         return editorialRepository.save(editorial);
     }
 
+    public Editorial getEditorialById(Integer id){ return editorialRepository.findEditorialById(id);}
     public int update(Editorial editorial){
 
         if (!editorial.getName().isEmpty()){

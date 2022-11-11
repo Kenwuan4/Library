@@ -23,40 +23,47 @@ export class StaffComponent implements OnInit {
   })
 
   staff: Staff[] = [];
+
   console = console;
   constructor(private staffService: StaffService,
-              private formBuilder: FormBuilder,
-              private authService: AuthService, 
-              private encrypt: EncryptService,
-              private router: Router) { }
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private encrypt: EncryptService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    
+
   }
-  onSumbit():void{
+  onSumbit(): void {
     let firstNameParam: string;
     let passParam: string;
     let lastName: string;
     let email: string;
     let userName: string;
 
-    firstNameParam = ''+this.registerForm.value.firstName;
-    passParam = this.encrypt.encryptUsingAES256(''+this.registerForm.value.password);
+    firstNameParam = '' + this.registerForm.value.firstName;
+    passParam = this.encrypt.encryptUsingAES256('' + this.registerForm.value.password);
 
-    lastName = ''+this.registerForm.value.lastName;
-    email = ''+this.registerForm.value.email;
-    userName = ''+this.registerForm.value.userName;
+    lastName = '' + this.registerForm.value.lastName;
+    email = '' + this.registerForm.value.email;
+    userName = '' + this.registerForm.value.userName;
 
-    this.authService.register(firstNameParam, lastName, email, userName,passParam).subscribe(
-                        data => {
-                                  console.log(data);
-                                  this.registerForm.reset();
-                                  this.router.navigateByUrl('/login');
-                                });
-    
+    this.staffService.registerStaff(firstNameParam, lastName, email).subscribe(
+      data => {
+        this.console.log(data);
+      }
+    )
+
+    this.authService.registerUser(userName, passParam).subscribe(
+      data => {
+        console.log(data);
+        this.registerForm.reset();
+        this.router.navigateByUrl('/login');
+      });
+
   }
 
-  getStaff():void{
+  getStaff(): void {
     this.staffService.getStaff().subscribe(staf => this.staff = staf);
   }
 

@@ -12,52 +12,53 @@ import { EditorialService } from '../services/editorial.service';
 })
 export class EditorialFormComponent implements OnInit {
 
-  title:string='';
-  edit:boolean=false;
+  title: string = '';
+  edit: boolean = false;
   editorial: Editorial =
-  {
-    "id": 0,
-    "name": '',
-    "url":'',
-    "webSite":''
-  };
+    {
+      "id": 0,
+      "name": '',
+      "url": '',
+      "webSite": ''
+    };
 
   editorialForm = this.formBuilder.group({
     name: '',
-    url:'',
-    webSite:''
+    url: '',
+    webSite: ''
   });
 
   constructor(private formBuilder: FormBuilder,
-              private route: ActivatedRoute,
-              private router: Router,
-              private editorialService: EditorialService) { }
+    private route: ActivatedRoute,
+    private router: Router,
+    private editorialService: EditorialService) { }
 
   ngOnInit(): void {
 
-    if (this.router.url.includes('edit')) {
+    if (this.router.url.includes('create')) {
+      this.title = 'Crear editorial';
+
+    }
+    else {
       this.title = 'Editar';
       this.edit = true;
       this.getEditorialByid();
     }
-    else {
-      this.title = 'Crear editorial';
-    }
   }
 
-  onsumbit():void{
-    let name: string = ''+this.editorialForm.value.name;
-    let url: string = ''+this.editorialForm.value.url;
-    let webSite: string = ''+this.editorialForm.value.webSite;
+  onSubmit(): void {
+    let name: string = '' + this.editorialForm.value.name;
+    let url: string = '' + this.editorialForm.value.url;
+    let webSite: string = '' + this.editorialForm.value.webSite;
 
-    if(this.edit){
+    if (this.edit) {
       const id = Number(this.route.snapshot.paramMap.get('id'));
-      this.editorialService.putEditorial(id,name,url,webSite).subscribe(
+      this.editorialService.putEditorial(id, name, url, webSite).subscribe(
         data => this.editorial = data
       )
     }
-    else{
-      this.editorialService.postEditorial(name,url,webSite).subscribe(
+    else {
+      this.editorialService.postEditorial(name, url, webSite).subscribe(
         data => this.editorial = data
       )
     }

@@ -29,6 +29,9 @@ public class StaffController {
         return staffService.listStaff();
     }
 
+    @GetMapping("/staff/{id}")
+    private Staff getStaffByid(@PathVariable("id") Integer id){ return staffService.getStaffById(id); }
+
     @PutMapping("/staff")
     private Staff updateStaff(@RequestBody Staff staff)
     {

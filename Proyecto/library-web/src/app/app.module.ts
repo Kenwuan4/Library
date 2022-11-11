@@ -37,11 +37,7 @@ import { EditorialFormComponent } from './editorial-form/editorial-form.componen
     FormsModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HeadersInterceptor,
-      multi: true
-    }
+
   ],
   bootstrap: [AppComponent]
 })
