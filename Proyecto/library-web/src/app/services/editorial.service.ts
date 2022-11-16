@@ -32,7 +32,7 @@ export class EditorialService {
     return this.http.post<Editorial>("http://localhost:8081/editorialAPI/editorial/", body);
   }
 
-  deleteEditorial(id: number): void {
-    this.http.delete("http://localhost:8081/editorialAPI/editorial/" + id);
+  deleteEditorial(id: number): Observable<any> {
+    return this.http.delete("http://localhost:8081/editorialAPI/editorial/" + id);
   }
 }

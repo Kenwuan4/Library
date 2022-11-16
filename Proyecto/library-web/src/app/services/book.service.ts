@@ -34,9 +34,9 @@ export class BookService {
     return this.http.get<Book[]>("http://localhost:8084/bookAPI/books/search/" + name /*, { headers: { skip: "true" } }*/);
   }
 
-  deleteBook(id: number): void {
+  deleteBook(id: number): Observable<any> {
     console.log(id);
-    this.http.delete("http://localhost:8084/bookAPI/book/" + id, this.httpOptions);
+    return this.http.delete("http://localhost:8084/bookAPI/book/" + id, this.httpOptions);
   }
 
   putBook(id: number, name: string, description: string, author: string, url: string, pages: number, price: number, editorialId: number): Observable<Book> {

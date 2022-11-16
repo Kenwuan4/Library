@@ -40,7 +40,7 @@ export class BookInfoComponent implements OnInit {
   }
 
   deleteBook(id: number): void {
-    this.bookService.deleteBook(id);
+    this.bookService.deleteBook(id).subscribe();
     this.router.navigateByUrl("/books");
   }
 

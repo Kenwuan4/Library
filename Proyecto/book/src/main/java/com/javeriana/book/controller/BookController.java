@@ -3,6 +3,7 @@ package com.javeriana.book.controller;
 import com.javeriana.book.model.Book;
 import com.javeriana.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -47,9 +48,9 @@ public class BookController {
     }
 
     @DeleteMapping("/book/{bookid}")
-    private void deleteBook(@PathVariable("bookid") int id){
-        System.out.println(id + "hola");
+    private ResponseEntity deleteBook(@PathVariable("bookid") int id){
         bookService.deleteBook(id);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/book")
@@ -62,11 +63,10 @@ public class BookController {
     }
 
     @PutMapping("/update/book")
-    @CrossOrigin("http://localhost:4200/")
-    @ResponseBody
+
     private Book updateBook(@RequestBody Book books, HttpServletResponse response)
     {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+
         return bookService.update(books);
     }
 

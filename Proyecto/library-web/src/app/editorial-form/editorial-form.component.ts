@@ -22,13 +22,7 @@ export class EditorialFormComponent implements OnInit {
       "img": ''
     };
 
-  editorialForm = this.formBuilder.group({
-    name: '',
-    url: '',
-    webSite: ''
-  });
-
-  constructor(private formBuilder: FormBuilder,
+  constructor(
     private route: ActivatedRoute,
     private router: Router,
     private editorialService: EditorialService) { }
@@ -37,7 +31,6 @@ export class EditorialFormComponent implements OnInit {
 
     if (this.router.url.includes('create')) {
       this.title = 'Crear editorial';
-
     }
     else {
       this.title = 'Editar';

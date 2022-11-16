@@ -38,8 +38,7 @@ export class EditorialsComponent implements OnInit {
 
   deleteEditorial(id: number): void {
     console.log(id)
-    this.editorialService.deleteEditorial(id);
-
+    this.editorialService.deleteEditorial(id).subscribe();
   }
 
 }

@@ -4,6 +4,7 @@ package com.example.editorial.controller;
 import com.example.editorial.model.Editorial;
 import com.example.editorial.service.EditorialService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,9 +33,9 @@ public class EditorialController {
     }
 
     @DeleteMapping("/editorial/{id}")
-    private List<Editorial> deleteEdi(@PathVariable("id") Integer id ){
+    private ResponseEntity deleteEdi(@PathVariable("id") Integer id ){
          editorialService.delete(id);
-         return editorialService.getAllEditorials();
+         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/editorial")
