@@ -26,7 +26,7 @@ describe('BookService', () => {
   it('should invoke http method and return data when getData method is called', () => {
     // returned value in order to avoid actual http call
     spyOn(service, "getBook").and.returnValues
-    const result = service.getBook(0, 3, "id", true)
+    const result = service.getBook(0, 3, "id", true0, 3, "id", true)
     expect(service.getBook).toHaveBeenCalled();
     expect(result).not.toBeNull();
   });

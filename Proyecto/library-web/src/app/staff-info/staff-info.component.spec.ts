@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { StaffInfoComponent } from './staff-info.component';
 import { StaffService } from '../services/staff.service';
 
@@ -12,8 +12,13 @@ describe('StaffInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+<<<<<<< HEAD
       declarations: [StaffInfoComponent],
       imports: [HttpClientTestingModule, ReactiveFormsModule]
+=======
+      declarations: [ StaffInfoComponent ],
+      imports: [HttpClientTestingModule,ReactiveFormsModule,FormsModule]
+>>>>>>> 20edbd9b9b9120b8c24017f9f55c6b73186a203f
     })
       .compileComponents();
 
@@ -25,9 +30,11 @@ describe('StaffInfoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  /*
   it('no title in the DOM after createComponent()', () => {
     expect(h1.textContent).toEqual('Personal');
   });
+<<<<<<< HEAD
 
   it('should get all the info of the staff', () => {
     let staff
@@ -36,4 +43,7 @@ describe('StaffInfoComponent', () => {
     )
     expect(staff).not.toBeNull()
   })
+=======
+  */
+>>>>>>> 20edbd9b9b9120b8c24017f9f55c6b73186a203f
 });
