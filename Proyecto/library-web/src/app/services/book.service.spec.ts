@@ -11,7 +11,7 @@ describe('BookService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule ],
+      imports: [HttpClientTestingModule],
       providers: [BookService]
     });
     service = TestBed.inject(BookService);
@@ -22,38 +22,38 @@ describe('BookService', () => {
     expect(service).toBeTruthy();
   });
 
-  
+
   it('should invoke http method and return data when getData method is called', () => {
     // returned value in order to avoid actual http call
     spyOn(service, "getBook").and.returnValues
-    const result = service.getBook()
+    const result = service.getBook(0, 3, "id", true)
     expect(service.getBook).toHaveBeenCalled();
     expect(result).not.toBeNull();
   });
-  
 
-  it('should getBooks', () => { 
+
+  it('should getBooks', () => {
 
     let postBook;
     service.postBook("test", "test", "test_author", "google.com", 5, 70000, 1).subscribe(res => {
       postBook = res;
-    });  
+    });
     expect(postBook).not.toBeNull();
   });
+
+  /*
+    it("should return data", () => {
+      let result: Book[] =[];
+      service.getBook().subscribe(t => {
+        result = t;
+      });
+      const req = httpTestingController.expectOne(
+        { method: 'GET', url:'http://localhost:8084/bookAPI/books' });
   
-/*
-  it("should return data", () => {
-    let result: Book[] =[];
-    service.getBook().subscribe(t => {
-      result = t;
+      req.flush([book]);
+  
+      expect(result[0]).toBe(book);
     });
-    const req = httpTestingController.expectOne(
-      { method: 'GET', url:'http://localhost:8084/bookAPI/books' });
-
-    req.flush([book]);
-
-    expect(result[0]).toBe(book);
-  });
-*/
+  */
 
 });
