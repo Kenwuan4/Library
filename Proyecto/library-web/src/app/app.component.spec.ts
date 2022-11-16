@@ -25,6 +25,12 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('library-web');
   });
+
+  it('navigate to "" redirects you to /home', fakeAsync(() => { 
+    router.navigate(['']); 
+    tick(); (3)
+    expect(location.path()).toBe('/home'); (4)
+  }));
 /*
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);

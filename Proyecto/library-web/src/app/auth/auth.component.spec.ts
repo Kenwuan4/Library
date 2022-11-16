@@ -1,7 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth.component';
+import { Auth} from '../models/Auth'
 
 describe('AuthComponent', () => {
   let component: AuthComponent;
@@ -19,7 +20,48 @@ describe('AuthComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create1234', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it('Should set submitted to true', (async() => {
+    expect(component.onSubmit).toBeTruthy();
+
+ }));
+ beforeEach(function(){
+  spyOn(console, 'error');
+})
+
+ it('Should call the OnSubmit method', () =>{ (async() =>{
+   fixture.detectChanges();
+   component.loginForm.controls ['login'].setValue('test1234');
+   component.loginForm.controls['password'].setValue('1234');
+   expect(component.onSubmit).toHaveBeenCalledTimes(0);
+ })
+
+ });
+ it('form invalid when empty', () => {
+  expect(component.loginForm.valid).toBeTruthy();
+});
+
+it('email field validity', () => {
+  let username = component.loginForm.controls['login']
+  expect(username.valid).toBeTruthy(); 
+});
+
+
+ it('Form should be valid', (async()=> {
+   component.loginForm.controls ['login'].setValue('test1234');
+   component.loginForm.controls['password'].setValue('1234');
+   component.onSubmit()
+   expect(component.loginForm.valid).toBeTruthy();
+ }));
+ it('Form should be invalid', (async()=> {
+  component.loginForm.controls ['login'].setValue('test1weewrwer234')
+  component.loginForm.controls['password'].setValue('123werwer4')
+  component.onSubmit()
+}));
+
 });

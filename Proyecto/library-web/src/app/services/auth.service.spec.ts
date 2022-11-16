@@ -35,6 +35,22 @@ describe('AuthService', () => {
       }
     );
   });*/
+  it('test login status', () => {
+    let response = null;
+    const mockResponse = {
+      status: '200'
+    };
+
+  service.login("test1234", "1234").subscribe(
+    (receivedResponse: any) => {
+      response = receivedResponse;
+      expect(mockResponse.status.toString()).toEqual('200');
+    },
+    (error: any) => {}
+  );
+  });
+  
+
 
   it('test login', () => {
 

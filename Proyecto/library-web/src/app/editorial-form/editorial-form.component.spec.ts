@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from "@angular/router/testing";
+import { Auth} from '../models/Auth'
 import { EditorialFormComponent } from './editorial-form.component';
 
 describe('EditorialFormComponent', () => {
@@ -23,4 +24,6 @@ describe('EditorialFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
+
