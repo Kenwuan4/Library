@@ -18,8 +18,8 @@ export class EditorialFormComponent implements OnInit {
     {
       "id": 0,
       "name": '',
-      "url": '',
-      "webSite": ''
+      "webSite": '',
+      "img": ''
     };
 
   editorialForm = this.formBuilder.group({
@@ -47,12 +47,13 @@ export class EditorialFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    let name: string = '' + this.editorialForm.value.name;
-    let url: string = '' + this.editorialForm.value.url;
-    let webSite: string = '' + this.editorialForm.value.webSite;
+    let name: string = this.editorial.name;
+    let url: string = this.editorial.img;
+    let webSite: string = this.editorial.webSite;
 
     if (this.edit) {
       const id = Number(this.route.snapshot.paramMap.get('id'));
+      console.log(this.editorial.img)
       this.editorialService.putEditorial(id, name, url, webSite).subscribe(
         data => this.editorial = data
       )

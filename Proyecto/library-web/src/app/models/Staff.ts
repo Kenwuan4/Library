@@ -1,7 +1,7 @@
 export interface Staff {
     id: number,
-    firstName: string,
-    lastName: string,
+    name: string,
+    lastname: string,
     identification: number,
     birth: Date,
     email: string,

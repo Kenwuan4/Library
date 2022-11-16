@@ -25,6 +25,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   onSubmit(): void {
 
     let userParam: string;
@@ -36,6 +37,7 @@ export class AuthComponent implements OnInit {
     this.authService.login(userParam, passParam).subscribe(
       data => {
         this.cokieService.set("token", data.token);
+        this.cokieService.set("user", userParam);
         this.loginForm.reset();
         this.router.navigateByUrl("/books");
 

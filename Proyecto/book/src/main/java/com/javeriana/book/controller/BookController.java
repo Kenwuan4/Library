@@ -16,8 +16,6 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-
-
     @GetMapping("/books")
     private List<Book> getAllBooks(){
         return bookService.getAllBooks();
@@ -64,8 +62,11 @@ public class BookController {
     }
 
     @PutMapping("/update/book")
-    private Book updateBook(@RequestBody Book books)
+    @CrossOrigin("http://localhost:4200/")
+    @ResponseBody
+    private Book updateBook(@RequestBody Book books, HttpServletResponse response)
     {
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         return bookService.update(books);
     }
 

@@ -23,10 +23,10 @@ public class StaffService {
         return  staffRepository.save(staff);
     }
 
-    public void invalidateStaff (Integer id){
+    public Staff invalidateStaff (Integer id){
         Staff staff = staffRepository.findById(id).get();
-        staff.setStatus(false);
-        staffRepository.save(staff);
+        staff.setStatus(!staff.isStatus());
+        return staffRepository.save(staff);
     }
 
 }

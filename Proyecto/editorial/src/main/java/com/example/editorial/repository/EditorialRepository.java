@@ -8,4 +8,5 @@ public interface EditorialRepository extends JpaRepository<Editorial, Integer> {
     Editorial findEditorialByName(String name);
 
     Editorial findEditorialById(Integer id);
+
 }

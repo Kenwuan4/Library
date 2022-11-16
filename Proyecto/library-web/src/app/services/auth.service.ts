@@ -26,4 +26,8 @@ export class AuthService {
     return this.http.post<Auth>("http://localhost:8085/authAPI/register", body);
   }
 
+  getUser(user: string): Observable<Auth> {
+    return this.http.get<Auth>("http://localhost:8085/authAPI/user/" + user);
+  }
+
 }

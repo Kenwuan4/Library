@@ -36,18 +36,7 @@ export class BookFormComponent implements OnInit {
     };
 
   editorials: Editorial[] = [];
-
-  bookForm = this.formBuilder.group({
-    name: '',
-    author: '',
-    pages: 0,
-    price: 0,
-    url: '',
-    editorial: 0,
-    description: ''
-  });
-
-
+  editorial?: Editorial;
   ngOnInit(): void {
     this.getEditorials();
     if (this.router.url.includes('edit')) {
@@ -61,14 +50,14 @@ export class BookFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    let name: string = '' + this.bookForm.value.name;
-    let author: string = '' + this.bookForm.value.author;
-    let description: string = '' + this.bookForm.value.description;
-    let url: string = '' + this.bookForm.value.url;
-    let price: number = <number>this.bookForm.value.price;
-    let pages: number = <number>this.bookForm.value.pages;
-    let editorialId: number = <number>this.bookForm.value.editorial;
-
+    let name: string = this.book.name;
+    let author: string = this.book.author;
+    let description: string = this.book.description;
+    let url: string = this.book.url;
+    let price: number = this.book.price;
+    let pages: number = this.book.pages;
+    let editorialId: number = 1;
+    console.log(this.editorial?.id)
     if (this.edit) {
       let id = Number(this.route.snapshot.paramMap.get('id'));
       this.bookService.putBook(id, name, description, author, url, pages, price, editorialId).subscribe(

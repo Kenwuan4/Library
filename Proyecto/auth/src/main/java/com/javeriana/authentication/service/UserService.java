@@ -34,7 +34,7 @@ public class UserService  implements UserDetailsService{
             return userRepo.save(user);
         }
 
-
+        public User getUSer(String user){return userRepo.findUserByUserNameLike(user);}
     }
 
 

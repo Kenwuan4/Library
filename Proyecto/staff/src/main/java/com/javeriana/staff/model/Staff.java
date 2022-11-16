@@ -39,4 +39,5 @@ public class Staff {
 
     @Column
     private boolean status;
+
 }

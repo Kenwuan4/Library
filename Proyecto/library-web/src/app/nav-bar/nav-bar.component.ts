@@ -36,6 +36,7 @@ export class NavBarComponent implements OnInit {
   cerrar(): void {
     console.log("hola");
     this.cokieService.delete("token");
+    this.cokieService.delete("user");
     this.router.navigateByUrl('/books');
   }
 

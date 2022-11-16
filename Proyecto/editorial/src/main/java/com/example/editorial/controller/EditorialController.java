@@ -32,8 +32,9 @@ public class EditorialController {
     }
 
     @DeleteMapping("/editorial/{id}")
-    private void deleteEdi(@PathVariable("id") int id ){
-        editorialService.delete(id);
+    private List<Editorial> deleteEdi(@PathVariable("id") Integer id ){
+         editorialService.delete(id);
+         return editorialService.getAllEditorials();
     }
 
     @PostMapping("/editorial")
@@ -42,7 +43,7 @@ public class EditorialController {
     }
 
     @PutMapping("/editorial")
-    private int updateEditorial(@RequestBody Editorial editorial){
+    private Editorial updateEditorial(@RequestBody Editorial editorial){
         return editorialService.update(editorial);
     }
 }

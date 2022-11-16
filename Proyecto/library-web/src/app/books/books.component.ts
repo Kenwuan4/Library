@@ -16,7 +16,11 @@ export class BooksComponent implements OnInit {
   title: string = '';
   books: Book[] = [];
   cookie: boolean = false;
-
+  search = [
+    "Libros",
+    "Editoriales"
+  ]
+  selected = 'Libros';
 
   searchForm = this.formBuilder.group({
     search: ''
@@ -28,6 +32,9 @@ export class BooksComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder) { }
 
+  update(e: any) {
+    this.selected = e.target.value;
+  }
   getBooks(): void {
     this.title = "Novedades";
     this.bookService.getBook().subscribe(
@@ -48,10 +55,19 @@ export class BooksComponent implements OnInit {
   }
 
   onSumbit() {
+    this.title = "Resultados"
     let search: string = '' + this.searchForm.value.search;
-    this.bookService.getBookByTitle(search).subscribe(
-      data => this.books = data
-    )
+    if (this.selected == "Libros") {
+      this.bookService.getBookByTitle(search).subscribe(
+        data => this.books = data
+      )
+    }
+    else {
+      this.bookService.getBooksByEditorial(search).subscribe(
+        data => this.books = data
+      )
+    }
+
   }
 
   ngOnInit(): void {

@@ -1,6 +1,63 @@
-<ul class = "staff">
-    <li *ngFor="let staf of staff">
-        <span class = "badge"> {{staf.id}} </span> {{staf.firstName}}
-        
-    </li>
-</ul>
+<div id="title">
+    <h1>Personal</h1>
+</div>
+
+<form [formGroup]="stafForm" (ngSubmit)="onSubmit()">
+
+    <div class="row justify-content-center" id="form-container">
+
+        <div class="col-2">
+            <label class="form-label">Nombre </label>
+            <input type="text" class="form-control" formControlName="name" [(ngModel)]="personal.name" />
+        </div>
+
+        <div class="col-2">
+            <label class="form-label">Apellido </label>
+            <input type="text" class="form-control" formControlName="lastName" [(ngModel)]="personal.lastname" />
+        </div>
+
+        <div class="col-2">
+            <label class="form-label">Nombre de usuario </label>
+            <input type="text" class="form-control" formControlName="userName" [(ngModel)]="auth.userName" />
+        </div>
+
+        <div class="col-2">
+            <label class="form-label">Email </label>
+            <input type="text" class="form-control" formControlName="email" [(ngModel)]="personal.email" />
+        </div>
+
+    </div>
+
+    <div class="row justify-content-end" id="form-container">
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" id="sumbit"> Editar </button>
+        </div>
+    </div>
+</form>
+
+<div class="table-responsive table-bordered table-hover table-fixed" id="table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Identificación</th>
+                <th scope="col">Email</th>
+                <th scope="col">Estatus</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let staf of staff">
+                <th scope="row"> {{staf.id}}</th>
+                <td> {{staf.name}} </td>
+                <td> {{staf.identification}} </td>
+                <td> {{staf.email}}</td>
+                <td> {{staf.status}}</td>
+                <td> <button type="button" class="btn btn-link btn-sm btn-rounded" (click)="changeStatus(staf.id)">
+                        Cambiar estatus
+                    </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

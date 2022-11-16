@@ -37,6 +37,12 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @GetMapping("/user/{userName}")
+    public User getUserByID(@PathVariable("userName") String userName){
+        return userService.getUSer(userName);
+    }
+
+
     /**
      * En este método HTTP se realiza la autenticación
      @param  jwtRequest Corresponde a la clase que contiene las credenciales usuario y contraseña.
@@ -77,7 +83,6 @@ public class AuthController {
     public ResponseEntity<?> validate() {
         return ResponseEntity.ok("authorized");
     }
-
 
 
     //Only ADMIN role can access this

@@ -26,20 +26,12 @@ public class EditorialService {
     }
 
     public Editorial getEditorialById(Integer id){ return editorialRepository.findEditorialById(id);}
-    public int update(Editorial editorial){
+    public Editorial update(Editorial editorial){
+        return editorialRepository.save(editorial);
 
-        if (!editorial.getName().isEmpty()){
-            Editorial editorial1 = editorialRepository.findById(editorial.getId()).get();
-            editorial1.setName(editorial.getName());
-            editorialRepository.save(editorial1);
-            return ExpiresFilter.XHttpServletResponse.SC_OK;
-        }
-        else{
-            return ExpiresFilter.XHttpServletResponse.SC_NO_CONTENT;
-        }
     }
 
-    public void delete(int id){
-        editorialRepository.deleteById(id);
+    public void delete(Integer id){
+         editorialRepository.deleteById(id);
     }
 }

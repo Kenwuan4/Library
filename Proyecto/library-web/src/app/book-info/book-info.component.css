@@ -1,17 +1,28 @@
-#contenedor{
+#contenedor {
     margin-top: 50px;
     margin-left: 70px;
-
 }
 
-#info-general{
+#info-general {
     margin-top: 20px;
 }
 
-#descripcion{
+#descripcion {
     margin-top: 20px;
 }
 
-#info{
+#info {
     margin-left: 30px;
+    padding: 50px 50px 50px 50px;
+}
+
+#actions {
+    margin-top: 50px;
+    margin-left: 576px;
+}
+
+.padding {
+    width: 400px;
+    height: 500px;
+    padding: 50px 50px 50px 50px;
 }

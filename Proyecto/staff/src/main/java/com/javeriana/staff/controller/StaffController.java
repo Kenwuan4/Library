@@ -20,8 +20,8 @@ public class StaffController {
     }
 
     @PutMapping("/staff/{id}")
-    private void invalidateStaff(@PathVariable("id") Integer id ){
-        staffService.invalidateStaff(id);
+    private Staff invalidateStaff(@PathVariable("id") Integer id ){
+        return staffService.invalidateStaff(id);
     }
 
     @GetMapping("/staff")

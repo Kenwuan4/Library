@@ -20,6 +20,8 @@ export class StaffComponent implements OnInit {
     firstName: '',
     password: '',
     userName: '',
+    birth: '',
+    identification: ''
   })
 
   staff: Staff[] = [];
