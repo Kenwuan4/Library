@@ -34,7 +34,7 @@
         <div class="col-2">
             <label class="form-label"> Editorial </label>
 
-            <select [(ngModel)]="editorial" name="selectedLevel">
+            <select [(ngModel)]="editorial" name="selectedLevel" (change)="update($event)">
                 <option *ngFor="let item of editorials" name="select" [ngValue]="item.id"> {{item.name}} </option>
             </select>
 

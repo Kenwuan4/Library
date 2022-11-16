@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Staff } from 'src/app/models/Staff';
 import { Token } from 'src/app/models/Token';
 import { Auth } from '../models/Auth';
+import { CokieService } from './cokie.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,16 @@ import { Auth } from '../models/Auth';
 
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private cokieService: CokieService) { }
+
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'authorization': 'Bearer ' + this.cokieService.get("token"),
+      'content-type': 'application/json',
+      'accept': 'application/json'
+    })
+  }
 
   login(user: string, password: string): Observable<Token> {
     //const headers = new HttpHeaders()
@@ -28,6 +37,15 @@ export class AuthService {
 
   getUser(user: string): Observable<Auth> {
     return this.http.get<Auth>("http://localhost:8085/authAPI/user/" + user);
+  }
+
+  updateUser(id: number, userName: string, password: string, roles: []): Observable<Auth> {
+    const body = { "id": id, "username": userName, "password": password, "roles": roles };
+    return this.http.put<Auth>("http://localhost:8085/authAPI/user/update", body);
+  }
+
+  validate(): Observable<any> {
+    return this.http.get("http://localhost:8085/authAPI/validateToken", this.httpOptions)
   }
 
 }

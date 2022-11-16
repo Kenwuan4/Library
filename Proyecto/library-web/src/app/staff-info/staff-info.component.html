@@ -2,38 +2,38 @@
     <h1>Personal</h1>
 </div>
 
-<form [formGroup]="stafForm" (ngSubmit)="onSubmit()">
+<div>
 
     <div class="row justify-content-center" id="form-container">
 
         <div class="col-2">
             <label class="form-label">Nombre </label>
-            <input type="text" class="form-control" formControlName="name" [(ngModel)]="personal.name" />
+            <input type="text" class="form-control" [(ngModel)]="personal.name" />
         </div>
 
         <div class="col-2">
             <label class="form-label">Apellido </label>
-            <input type="text" class="form-control" formControlName="lastName" [(ngModel)]="personal.lastname" />
+            <input type="text" class="form-control" [(ngModel)]="personal.lastname" />
         </div>
 
         <div class="col-2">
             <label class="form-label">Nombre de usuario </label>
-            <input type="text" class="form-control" formControlName="userName" [(ngModel)]="auth.userName" />
+            <input type="text" class="form-control" [(ngModel)]="auth.userName" />
         </div>
 
         <div class="col-2">
             <label class="form-label">Email </label>
-            <input type="text" class="form-control" formControlName="email" [(ngModel)]="personal.email" />
+            <input type="text" class="form-control" [(ngModel)]="personal.email" />
         </div>
 
     </div>
 
     <div class="row justify-content-end" id="form-container">
         <div class="col-2">
-            <button type="submit" class="btn btn-primary" id="sumbit"> Editar </button>
+            <button type="submit" class="btn btn-primary" id="sumbit" (click)="onSubmit()"> Editar </button>
         </div>
     </div>
-</form>
+</div>
 
 <div class="table-responsive table-bordered table-hover table-fixed" id="table">
     <table class="table">

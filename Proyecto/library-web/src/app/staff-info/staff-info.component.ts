@@ -57,13 +57,13 @@ export class StaffInfoComponent implements OnInit {
 
   getPersonal(): void {
     this.authService.getUser(this.cokieService.get("user")).subscribe(
-      data => this.auth = data
+      data => {
+        this.auth = data
+        this.staffService.getStaffById(this.auth.id).subscribe(
+          data => this.personal = data
+        )
+      }
     );
-
-    console.log(this.auth.password)
-    /*this.staffService.getStaffById(this.auth.id).subscribe(
-      data => this.personal = data
-    )*/
   }
 
   changeStatus(id: number): void {
@@ -73,6 +73,20 @@ export class StaffInfoComponent implements OnInit {
   }
 
   onSubmit() {
+    let id = this.personal.id;
+    let name = this.personal.name;
+    let lastName = this.personal.lastname;
+    let email = this.personal.email;
+    let iden = this.personal.identification;
+    let birth = this.personal.birth;
+    let status = this.personal.status;
+
+    let userName = this.auth.userName;
+    let password = this.auth.password;
+    let roles = this.auth.roles;
+
+    this.staffService.updateStaff(id, name, lastName, email, iden, birth, status).subscribe();
+    this.authService.updateUser(id, userName, password, roles).subscribe();
 
   }
 

@@ -43,19 +43,21 @@ export class EditorialFormComponent implements OnInit {
     let name: string = this.editorial.name;
     let url: string = this.editorial.img;
     let webSite: string = this.editorial.webSite;
-
+    console.log(webSite)
     if (this.edit) {
       const id = Number(this.route.snapshot.paramMap.get('id'));
       console.log(this.editorial.img)
       this.editorialService.putEditorial(id, name, url, webSite).subscribe(
         data => this.editorial = data
       )
+
     }
     else {
       this.editorialService.postEditorial(name, url, webSite).subscribe(
         data => this.editorial = data
       )
     }
+    this.router.navigateByUrl("/editorials");
   }
 
   getEditorialByid(): void {

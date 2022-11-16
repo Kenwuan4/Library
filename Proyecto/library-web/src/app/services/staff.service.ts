@@ -26,8 +26,8 @@ export class StaffService {
     return this.http.get<Staff>("http://localhost:8082/staffAPI/staff/" + id);
   }
 
-  registerStaff(name: string, lastName: string, email: string): Observable<Staff> {
-    const body = { "name": name, "lastname": lastName, "email": email };
+  registerStaff(name: string, lastName: string, email: string, iden: number, birth: Date, status: boolean): Observable<Staff> {
+    const body = { "name": name, "lastname": lastName, "email": email, "identification": iden, "birth": birth, "status": status };
     return this.http.post<Staff>("http://localhost:8082/staffAPI/newStaff", body);
   }
 
@@ -36,8 +36,8 @@ export class StaffService {
     return this.http.put<Staff>("http://localhost:8082/staffAPI/staff/" + id, body);
   }
 
-  updateStaff(): Observable<Staff> {
-    const body = {};
+  updateStaff(id: number, name: string, lastName: string, email: string, iden: number, birth: Date, status: boolean): Observable<Staff> {
+    const body = { "id": id, "name": name, "lastname": lastName, "email": email, "identification": iden, "birth": birth, "status": status };
     return this.http.put<Staff>("http://localhost:8082/staffAPI/staff/", body);
   }
 }

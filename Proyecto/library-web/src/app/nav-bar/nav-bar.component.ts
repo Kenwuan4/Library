@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CokieService } from '../services/cokie.service';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,8 +14,7 @@ export class NavBarComponent implements OnInit {
 
 
   constructor(private cokieService: CokieService,
-    private router: Router,
-    private formBuilder: FormBuilder) { }
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -34,7 +32,6 @@ export class NavBarComponent implements OnInit {
 
 
   cerrar(): void {
-    console.log("hola");
     this.cokieService.delete("token");
     this.cokieService.delete("user");
     this.router.navigateByUrl('/books');

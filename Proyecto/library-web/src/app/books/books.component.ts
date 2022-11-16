@@ -21,6 +21,7 @@ export class BooksComponent implements OnInit {
     "Editoriales"
   ]
   selected = 'Libros';
+  pages = 0;
 
   searchForm = this.formBuilder.group({
     search: ''
@@ -35,10 +36,15 @@ export class BooksComponent implements OnInit {
   update(e: any) {
     this.selected = e.target.value;
   }
-  getBooks(): void {
+
+  getBooks(page: number): void {
     this.title = "Novedades";
-    this.bookService.getBook().subscribe(
-      book => this.books = book
+    this.bookService.getBook(page, 3, "id", true).subscribe(
+      book => {
+        console.log(book)
+        this.pages = book.totalPages
+        this.books = book.content
+      }
     );
 
   }
@@ -71,7 +77,7 @@ export class BooksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getBooks();
+    this.getBooks(0);
   }
 
 
