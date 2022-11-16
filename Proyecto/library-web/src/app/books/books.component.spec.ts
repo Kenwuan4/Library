@@ -46,15 +46,7 @@ describe('BooksComponent', () => {
     component.selected = "Libros"
     expect(component.books).not.toBeNull
   });
-  it('should contain books by editorial', () => {
 
-    component.selected = "Editoriales"
-    component.search = ["penguin"]
-
-    const spy = spyOn(bookService, "getBooksByEditorial").and.callThrough
-    component.onSumbit();
-    expect(spy).toHaveBeenCalled()
-  });
 
   it('should change boolean cokie', () => {
     component.ngDoCheck();

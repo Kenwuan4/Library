@@ -26,17 +26,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('library-web');
   });
 
-  it('navigate to "" redirects you to /home', fakeAsync(() => { 
-    router.navigate(['']); 
-    tick(); (3)
-    expect(location.path()).toBe('/home'); (4)
-  }));
-/*
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('library-web app is running!');
-  });
-  */
 });
