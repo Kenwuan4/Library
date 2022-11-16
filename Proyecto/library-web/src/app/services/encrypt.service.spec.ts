@@ -7,7 +7,7 @@ describe('EncryptService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule ],
+      imports: [HttpClientTestingModule],
       providers: [EncryptService]
     });
     service = TestBed.inject(EncryptService);
@@ -15,5 +15,9 @@ describe('EncryptService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('should generate a password', () => {
+    expect(service.encryptUsingAES256("1234")).toBe("eqgMD3f6j/f68+FYTChFlQ==");
   });
 });

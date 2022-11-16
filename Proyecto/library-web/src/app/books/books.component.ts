@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
 import { Book } from '../models/Book';
 import { CokieService } from '../services/cokie.service';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -29,8 +28,6 @@ export class BooksComponent implements OnInit {
 
   constructor(private bookService: BookService,
     private cokieService: CokieService,
-    private router: Router,
-    private route: ActivatedRoute,
     private formBuilder: FormBuilder) { }
 
   update(e: any) {
@@ -56,8 +53,6 @@ export class BooksComponent implements OnInit {
     else {
       this.cookie = false;
     }
-
-
   }
 
   onSumbit() {
