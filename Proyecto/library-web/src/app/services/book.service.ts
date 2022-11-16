@@ -18,8 +18,8 @@ export class BookService {
     })
   }
 
-  getBook(): Observable<Book[]> {
-    return this.http.get<Book[]>("http://localhost:8084/bookAPI/books" /*, { headers: { skip: "true" } }*/);
+  getBook(page: number, size: number, order: string, asc: boolean): Observable<any> {
+    return this.http.get<any>("http://localhost:8084/bookAPI/books?" + `page=${page}&size=${size}&order=${order}&asc=${asc}` /*, { headers: { skip: "true" } }*/);
   }
 
   getBookById(id: number): Observable<Book> {

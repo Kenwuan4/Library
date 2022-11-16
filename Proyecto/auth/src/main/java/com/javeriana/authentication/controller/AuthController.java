@@ -73,6 +73,10 @@ public class AuthController {
         );
     }
 
+    @PutMapping("user/update")
+    public User updateUser(@RequestBody User user){
+        return userService.saveUser(user);
+    }
     @PostMapping(value = "/register")
     public ResponseEntity<?> register(@RequestBody User user){
 
@@ -81,7 +85,7 @@ public class AuthController {
 
     @GetMapping("/validateToken")
     public ResponseEntity<?> validate() {
-        return ResponseEntity.ok("authorized");
+        return ResponseEntity.ok(true);
     }
 
 

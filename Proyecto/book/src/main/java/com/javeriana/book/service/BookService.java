@@ -4,6 +4,8 @@ import com.javeriana.book.model.Book;
 import com.javeriana.book.model.Editorial;
 import com.javeriana.book.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,8 +20,9 @@ public class BookService {
 
     @Autowired
     private RestTemplate restTemplate;
-    public List<Book> getAllBooks(){
-        return bookRepository.findAll();
+    public Page<Book> getAllBooks(Pageable pageable){
+
+        return bookRepository.findAll(pageable);
     }
 
     public List<Object> getEditoriales(){
@@ -51,18 +54,10 @@ public class BookService {
 
 
     public Book save(Book book){
-        /*Optional<Editorial> optionalEditorial = editorialRepository.findById(book.getEditorial().getId());
-        book.setEditorial(optionalEditorial.get());*/
         return bookRepository.save(book);
     }
 
     public Book update (Book book){
-        /*Book book1 = bookRepository.findById(book.getId()).get();
-
-        if(!book.getName().isEmpty() && !book.getAuthor().isEmpty() && !book.getDescription().isEmpty()
-                && book.getUrl().isEmpty() && book.getPages() > 30 && book.getPrice() > 1000) {
-            book1 = book;
-        }*/
         return bookRepository.save(book);
     }
 

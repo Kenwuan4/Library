@@ -56,19 +56,27 @@ export class BookFormComponent implements OnInit {
     let url: string = this.book.url;
     let price: number = this.book.price;
     let pages: number = this.book.pages;
-    let editorialId: number = 1;
-    console.log(this.editorial?.id)
+    let editorialId: number = Number(this.selected.split(":")[1]);
+
+    console.log(editorialId)
     if (this.edit) {
       let id = Number(this.route.snapshot.paramMap.get('id'));
       this.bookService.putBook(id, name, description, author, url, pages, price, editorialId).subscribe(
         data => this.book = data
       )
+      this.router.navigateByUrl("/book-info/" + id);
     }
     else {
       this.bookService.postBook(name, description, author, url, pages, price, editorialId).subscribe(
         data => this.book = data
       );
+      this.router.navigateByUrl("/books");
     }
+  }
+  selected = '';
+
+  update(e: any) {
+    this.selected = e.target.value;
   }
 
   getEditorials(): void {

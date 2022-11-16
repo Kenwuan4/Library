@@ -3,6 +3,10 @@ package com.javeriana.book.controller;
 import com.javeriana.book.model.Book;
 import com.javeriana.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +22,12 @@ public class BookController {
     BookService bookService;
 
     @GetMapping("/books")
-    private List<Book> getAllBooks(){
-        return bookService.getAllBooks();
+    private ResponseEntity<Page<Book>> getAllBooks(@RequestParam(defaultValue = "0") int page,
+                                                   @RequestParam(defaultValue = "10") int size,
+                                                   @RequestParam(defaultValue = "id") String order,
+                                                   @RequestParam(defaultValue = "true") boolean asc){
+        Page<Book> books = bookService.getAllBooks(PageRequest.of(page,size, Sort.by(order)));
+        return new ResponseEntity<Page<Book>>(books, HttpStatus.OK);
     }
 
     @GetMapping("/books/{id}")
