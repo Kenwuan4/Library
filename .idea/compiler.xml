@@ -7,8 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="authorization" />
         <module name="editorial" />
+        <module name="authorization" />
         <module name="book" />
         <module name="staff" />
         <module name="demo" />

@@ -17,13 +17,13 @@ export class AuthService {
     //const headers = new HttpHeaders()
     const body = { "username": user, "password": password };
     //const params = new HttpParams()
-    return this.http.post<Token>("http://localhost:8085/authAPI/login", body);
+    return this.http.post<Token>("http://localhost:8080/authAPI/login", body);
   }
 
   registerUser(userName: string, password: string): Observable<Auth> {
     //const headers = new HttpHeaders();
     const body = { "userName": userName, "password": password };
-    return this.http.post<Auth>("http://localhost:8085/authAPI/register", body);
+    return this.http.post<Auth>("http://localhost:8080/authAPI/register", body);
   }
 
   getUser(user: string): Observable<Auth> {

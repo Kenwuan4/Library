@@ -6,6 +6,7 @@ import { StaffInfoComponent } from './staff-info.component';
 describe('StaffInfoComponent', () => {
   let component: StaffInfoComponent;
   let fixture: ComponentFixture<StaffInfoComponent>;
+  let h1: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -21,5 +22,8 @@ describe('StaffInfoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('no title in the DOM after createComponent()', () => {
+    expect(h1.textContent).toEqual('Personal');
   });
 });
