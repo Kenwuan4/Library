@@ -1,9 +1,12 @@
+/**
+ * Datos del staff
+ */
 export interface Staff {
     id: number,
     name: string,
     lastname: string,
     identification: number,
     birth: Date,
-    role: string,
+    email: string,
     status: boolean
 }

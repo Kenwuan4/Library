@@ -4,7 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-
+/**
+ * En esta clase se hace usa para manejar los roles.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Entity
 @Table(name = "roles")
 @Getter

@@ -8,12 +8,24 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
+/**
+ * En este servicio se manejan las credenciales para realizar autenticacion.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Service
 public class UserService  implements UserDetailsService{
 
         @Autowired
         private UserRepository userRepo;
+
+    /**
+     * En este método se autenticar un usuario
+     *@param  username Este parámetro corresponde al nombre de usuario
+     * @return String retorna el usuario autenticado
+     */
 
         @Override
         public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -29,12 +41,20 @@ public class UserService  implements UserDetailsService{
             }
             return builder.build();
         }
-
+    /**
+     * En este método se utiliza para guardar un usuario.
+     *@param  user Este parámetro corresponde al user a guardar
+     * @return String retorna el usuario que se saco del token.
+     */
         public User saveUser(User user){
             return userRepo.save(user);
         }
-
-
+    /**
+     * En este método se utiliza para encontrar un usuario por nombre de usuario.
+     * @param  user Este parámetro corresponde al nombre del usuario.
+     * @return String retorna el usuario que se saco del token.
+     */
+        public User getUSer(String user){return userRepo.findUserByUserNameLike(user);}
     }
 
 

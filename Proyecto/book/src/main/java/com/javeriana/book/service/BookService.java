@@ -1,14 +1,24 @@
 package com.javeriana.book.service;
 
 import com.javeriana.book.model.Book;
+import com.javeriana.book.model.Editorial;
 import com.javeriana.book.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-
+/**
+ * En esta interfaz se conecta con la base de datos para realizar operaciones.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Service
 public class BookService {
     @Autowired
@@ -16,8 +26,9 @@ public class BookService {
 
     @Autowired
     private RestTemplate restTemplate;
-    public List<Book> getAllBooks(){
-        return bookRepository.findAll();
+    public Page<Book> getAllBooks(Pageable pageable){
+
+        return bookRepository.findAll(pageable);
     }
 
     public List<Object> getEditoriales(){
@@ -32,38 +43,27 @@ public class BookService {
     public Book getBookbyId(int id){
         return bookRepository.findBooksById(id);
     }
-    /*public List<Book> getBooksByEditorial(String editorial){
 
 
-        Object[] objects = restTemplate.getForObject("http://editorialM/editorials/editorial", Object[].class);
-        if (editorial != null)
+    public List<Book> getBooksByEditorial(String editorial){
+        Editorial objects = restTemplate.getForObject("http://editorialM/editorialAPI/editorials/"+editorial, Editorial.class);
 
-            return bookRepository.findByEditorialId(editorials.getId());
-        else {
+        if (objects.getId() != null)
+            return this.bookRepository.findByEditorialId(objects.getId());
+        else
             return Collections.emptyList();
-        }
-
-    }*/
+    }
 
     public List<Book> getBookByPrice(double price){
-
         return bookRepository.findBooksByPriceIsLessThanEqual(price);
     }
 
 
     public Book save(Book book){
-        /*Optional<Editorial> optionalEditorial = editorialRepository.findById(book.getEditorial().getId());
-        book.setEditorial(optionalEditorial.get());*/
         return bookRepository.save(book);
     }
 
     public Book update (Book book){
-        /*Book book1 = bookRepository.findById(book.getId()).get();
-
-        if(!book.getName().isEmpty() && !book.getAuthor().isEmpty() && !book.getDescription().isEmpty()
-                && book.getUrl().isEmpty() && book.getPages() > 30 && book.getPrice() > 1000) {
-            book1 = book;
-        }*/
         return bookRepository.save(book);
     }
 

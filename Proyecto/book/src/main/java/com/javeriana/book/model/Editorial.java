@@ -6,20 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-
-@Entity
-@Table
+/**
+ * En este se manejan las editoriales.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class Editorial {
 
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column
     private String name;
+    private String webSite;
+    private String img;
 }

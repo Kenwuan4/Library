@@ -9,11 +9,18 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table
+@Table(name="staf")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+/**
+ * Esta entidad es utilizada para manejar los usuarios.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 
 public class Staff {
 
@@ -28,15 +35,16 @@ public class Staff {
     @Column (nullable = true)
     private String lastname;
 
-    @Column
+    @Column (nullable = true)
     private long identification;
 
-    @Column
+    @Column (nullable = true)
     private Date birth;
 
     @Column
-    private String role;
+    private String email;
 
     @Column
     private boolean status;
+
 }

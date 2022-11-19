@@ -1,12 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="titulo" class="container-fluid ">
+    <div class="row g-0 text-center">
 
-<h1> Editoriales </h1>
-<div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col-2 col-md-3">
+            <H1> Editoriales</H1>
+        </div>
+        <div class="col-6 col-md-4">
+
+        </div>
+        <div class="col-6 col-md-3" id="head">
+
+        </div>
+        <div class="col-6 col-md-1">
+
+        </div>
+
+        <div class="col-1 col-md-1" id="head">
+            <button type="button" class="btn btn-success" *ngIf="cookie" routerLink="/editorial/create"> Agregar
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-5 g-3" id="card">
     <div class="col" *ngFor="let editorial of editorials">
         <div class="card h-100">
-            <img src={{editorial.url}} class="card-img-top" alt="...">
+            <img src={{editorial.img}} class="card-img-top" alt="{{editorial.name}}">
             <div class="card-body">
-                <h5 class="card-title">{{editorial.name}}</h5>
-                <p class="card-text">{{editorial.url}}</p>
+                <h5 class="card-title">
+                    {{editorial.name}}
+                </h5>
+
+                <button type="button" class="btn btn-warning" *ngIf="cookie"
+                    routerLink="/editorial/edit/{{editorial.id}}">
+                    <i class="fa fa-edit"> </i>
+                </button>
+                <button type="button" class="btn btn-danger" *ngIf="cookie" (click)="deleteEditorial(editorial.id)">
+                    <i class="fa fa-trash"> </i> </button>
             </div>
         </div>
     </div>

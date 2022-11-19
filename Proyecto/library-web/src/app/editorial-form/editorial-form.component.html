@@ -1,0 +1,29 @@
+<div id="title">
+    <h2> {{title}} </h2>
+</div>
+
+<div>
+    <div class="row justify-content-center" id="form-container">
+
+        <div class="col-2">
+            <label class="form-label">Nombre de la editorial </label>
+            <input type="text" class="form-control" [(ngModel)]="editorial.name" />
+        </div>
+
+        <div class="col-2">
+            <label class="form-label"> Imagen (url) </label>
+            <input type="text" class="form-control" [(ngModel)]="editorial.img" />
+        </div>
+        <div class="col-2">
+            <label class="form-label"> Pagina web </label>
+            <input type="text" class="form-control" [(ngModel)]="editorial.webSite" />
+        </div>
+
+    </div>
+    <div class="row justify-content-end" id="form-container">
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary" id="sumbit" (click)="onSubmit()">{{title}}</button>
+        </div>
+    </div>
+
+</div>

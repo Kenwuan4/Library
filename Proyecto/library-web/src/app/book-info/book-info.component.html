@@ -1,23 +1,33 @@
-<div *ngIf="book" id = "contenedor">
-    <div class="row">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div *ngIf="book" id="contenedor">
 
-        <div class  = "col-2">
-            <img src={{book.url}}>
-        </div>
-
-        <div class = "col-6" id = "info">
-            <h2> {{book.name | uppercase}}</h2>
-
-            <div id = "info-general">
-                <h3> {{book.author | uppercase}}</h3>
-                <h4> $ {{book.price }} </h4>
-            </div>
-
-            <div id = "descripcion">
-                <h4>Descripción:</h4>
-                <h6> {{book.description}} </h6>
-            </div>
-        </div>
-
+  <div class="row">
+    <div class="col-3">
+      <img src="{{ book.url }}" class="padding" />
     </div>
+
+    <div class="col-7 " id="info">
+      <h2>{{ book.name | uppercase }}</h2>
+
+      <div id="info-general">
+        <h3>{{ book.author | uppercase }}</h3>
+        <h4>$ {{ book.price }}</h4>
+      </div>
+
+      <div id="descripcion">
+        <h4>Descripción:</h4>
+        <h6>{{ book.description }}</h6>
+      </div>
+
+      <div id="actions">
+        <button type="button" class="btn btn-warning" *ngIf="cookie" routerLink="/book/edit/{{ book.id }}"> <i
+            class="fa fa-edit"> </i> Editar
+        </button>
+
+        <button type="button" class="btn btn-danger" *ngIf="cookie" (click)="deleteBook(book.id)"> <i
+            class="fa fa-trash"></i> Eliminar </button>
+      </div>
+    </div>
+
+  </div>
 </div>

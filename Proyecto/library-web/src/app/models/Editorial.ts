@@ -1,5 +1,9 @@
-export interface Editorial{
+/**
+ * Datos de la editorial.
+ */
+export interface Editorial {
     id: number,
-    name: string, 
-    url: string
+    name: string,
+    webSite: string,
+    img: string
 }

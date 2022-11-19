@@ -1,20 +1,59 @@
-<div>
-    <H1> Novedades</H1>
+<div id="titulo" class="container-fluid ">
+    <div class="row g-0 text-center">
 
+        <div class="col-2 col-md-3">
+            <H1> {{title}}</H1>
+        </div>
+
+        <div class="col-6 col-md-4">
+
+        </div>
+        <div class="col-6 col-md-3" id="head">
+            <form class="d-flex" role="search" [formGroup]="searchForm" (ngSubmit)="onSumbit()">
+                <!--Drop down para busqueda-->
+                <select #cricket (change)="update($event)">
+                    <option *ngFor="let item of search" [value]="item">
+                        {{item}}
+                    </option>
+                </select>
+
+                <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search"
+                    formControlName="search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <div class="col-1 col-md-2" id="head">
+            <button type="button" class="btn btn-success" *ngIf="cookie" routerLink="/book/create"> Agregar </button>
+        </div>
+    </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-4 g-2" id="card">
     <div class="col" *ngFor="let book of books">
         <div class="card h-100">
-            <img src={{book.url}} class="card-img-top" alt="..." height=400px width="100px">
+            <img src={{book.url}} class="card-img-top" height=400pd width="1pd">
             <div class="card-body">
                 <h5 class="card-title">{{book.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted"> </h6>
                 <p class="card-text">{{book.description}}</p>
-                <a routerLink = "/book-info/{{book.id}}" role="button">Ver detalle</a>
+                <a routerLink="/book-info/{{book.id}}" role="button">Ver detalle</a>
             </div>
         </div>
     </div>
 </div>
 
+<nav aria-label="..." *ngIf="pages > 0" id="pagination">
+    <ul class="pagination pagination-circle justify-content-center">
+        <li class="page-item">
+            <a class="page-link" (click)="getBooks(0)"> <span aria-hidden="true">&laquo;</span></a>
+        </li>
+        <li class="page-item" *ngFor="let i of [].constructor(pages); index  as y"><a class="page-link"
+                (click)="getBooks(y)"> {{y+1}} </a>
+        </li>
 
-
+        <li class="page-item">
+            <a class="page-link" (click)="getBooks(pages-1)"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+    </ul>
+</nav>

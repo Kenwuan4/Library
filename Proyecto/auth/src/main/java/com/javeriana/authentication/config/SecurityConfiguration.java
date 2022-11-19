@@ -47,12 +47,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
+        http.
+                cors().and().csrf().disable()
                 .cors(Customizer.withDefaults())
                 .authorizeRequests()
                 .antMatchers("/authAPI/login").permitAll()
                 .antMatchers("/authAPI/register").permitAll()
+                .antMatchers("/authAPI/user/**").permitAll()
                 .antMatchers("authAPI/validateToken").authenticated()
                 .anyRequest().authenticated()
                 .and()
@@ -61,11 +62,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
+    /**
+     * En este método se configura el servicio de autenticación.
+     *@param  auth Corresponde al contructor del manager de autenticacion
+     * @return void.
+     */
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserService);
     }
+
+    /**
+     * En este método se configura el servicio de autenticación.
+     *@param authenticationConfiguration Corresponde al contructor del manager de autenticacion
+     * @return void.
+     */
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
@@ -90,6 +102,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         source.registerCorsConfiguration("/**", cc);
         return source;
     }
+
+    /**
+     * En este método se configuran el encriptador de contraseñas,
+     * @return void
+     */
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {

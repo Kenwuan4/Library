@@ -8,37 +8,62 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Este servicio es usado para llamar el repositorio y proveer los métodos necesarios
+ * para administrar una editorial.
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Service
 public class EditorialService {
 
     @Autowired
     EditorialRepository editorialRepository;
-
+    /**
+     * En este método se buscan todas las editoriales
+     * @return Editorial corresponde a las editoriales encontradas.
+     */
     public List<Editorial> getAllEditorials(){
         return editorialRepository.findAll();
     }
-
+    /**
+     * En este método se buscan una editorial por nombre.
+     * @param name Corresponde al nombre de la editorial a buscar.
+     * @return Editorial corresponde a la editorial encontrada.
+     */
     public Editorial getEditorialByName(String name){
         return editorialRepository.findEditorialByName(name);
     }
+    /**
+     * En este método se guarda una editorial.
+     * @param editorial Corresponde a la editorial a guardar.
+     * @return Editorial corresponde a la editorial guardada.
+     */
     public Editorial save(Editorial editorial){
         return editorialRepository.save(editorial);
     }
+    /**
+     * En este método se busca una editorial por id
+     * @param id Corresponde al id de la editorial a buscar
+     * @return Editorial corresponde a la editorial encontrada.
+     */
+    public Editorial getEditorialById(Integer id){ return editorialRepository.findEditorialById(id);}
+    /**
+     * En este método se actualiza una editorial
+     * @param editorial Corresponde a la editorial a aztualizar
+     * @return Editorial corresponde a la editorial actualizada.
+     */
+    public Editorial update(Editorial editorial){
+        return editorialRepository.save(editorial);
 
-    public int update(Editorial editorial){
-
-        if (!editorial.getName().isEmpty()){
-            Editorial editorial1 = editorialRepository.findById(editorial.getId()).get();
-            editorial1.setName(editorial.getName());
-            editorialRepository.save(editorial1);
-            return ExpiresFilter.XHttpServletResponse.SC_OK;
-        }
-        else{
-            return ExpiresFilter.XHttpServletResponse.SC_NO_CONTENT;
-        }
     }
-
-    public void delete(int id){
-        editorialRepository.deleteById(id);
+    /**
+     * En este método se actualiza una elimina
+     * @param id Corresponde al id de la editorial a aztualizar
+     * @return Editorial corresponde a la editorial eliminada.
+     */
+    public void delete(Integer id){
+         editorialRepository.deleteById(id);
     }
 }

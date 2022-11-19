@@ -1,0 +1,974 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>library-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">library-web documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  StaffInfoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/staff-info/staff-info.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-staff-info</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./staff-info.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./staff-info.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#auth" >auth</a>
+                            </li>
+                            <li>
+                                <a href="#personal" >personal</a>
+                            </li>
+                            <li>
+                                <a href="#staff" >staff</a>
+                            </li>
+                            <li>
+                                <a href="#stafForm" >stafForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changeStatus" >changeStatus</a>
+                            </li>
+                            <li>
+                                <a href="#getPersonal" >getPersonal</a>
+                            </li>
+                            <li>
+                                <a href="#getStaff" >getStaff</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(staffService: <a href="../injectables/StaffService.html" target="_self">StaffService</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, cokieService: <a href="../injectables/CokieService.html" target="_self">CokieService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/staff-info/staff-info.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>staffService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StaffService.html" target="_self" >StaffService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cokieService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CokieService.html" target="_self" >CokieService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeStatus"></a>
+                    <span class="name">
+                        <span ><b>changeStatus</b></span>
+                        <a href="#changeStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeStatus(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/staff-info/staff-info.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cambia el status del usuario por su id.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: Id del usuario</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPersonal"></a>
+                    <span class="name">
+                        <span ><b>getPersonal</b></span>
+                        <a href="#getPersonal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPersonal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/staff-info/staff-info.component.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene los datos del usuario</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStaff"></a>
+                    <span class="name">
+                        <span ><b>getStaff</b></span>
+                        <a href="#getStaff"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStaff()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/staff-info/staff-info.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene los datos del staff</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/staff-info/staff-info.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>inicializa los datos del staff y usuario</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/staff-info/staff-info.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Se hace la actualizacion de los datos del usuario.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auth"></a>
+                    <span class="name">
+                        <span ><b>auth</b></span>
+                        <a href="#auth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Auth.html" target="_self" >Auth</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &quot;id&quot;: 0,
+    &quot;userName&quot;: &#x27;&#x27;,
+    &quot;password&quot;: &#x27;&#x27;,
+    &quot;roles&quot;: []
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/staff-info/staff-info.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="personal"></a>
+                    <span class="name">
+                        <span ><b>personal</b></span>
+                        <a href="#personal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Staff.html" target="_self" >Staff</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &quot;id&quot;: 0,
+    &quot;name&quot;: &#x27;&#x27;,
+    &quot;lastname&quot;: &#x27;&#x27;,
+    &quot;identification&quot;: 0,
+    &quot;birth&quot;: new Date(),
+    &quot;email&quot;: &#x27;&#x27;,
+    &quot;status&quot;: true
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/staff-info/staff-info.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="staff"></a>
+                    <span class="name">
+                        <span ><b>staff</b></span>
+                        <a href="#staff"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Staff.html" target="_self" >Staff[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/staff-info/staff-info.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stafForm"></a>
+                    <span class="name">
+                        <span ><b>stafForm</b></span>
+                        <a href="#stafForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.formBuilder.group({
+    name: &#x27;&#x27;,
+    lastName: &#x27;&#x27;,
+    userName: &#x27;&#x27;,
+    email: &#x27;&#x27;
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/staff-info/staff-info.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Auth } from &#x27;../models/Auth&#x27;;
+import { Staff } from &#x27;../models/Staff&#x27;;
+import { StaffService } from &#x27;../services/staff.service&#x27;;
+import { FormBuilder } from &#x27;@angular/forms&#x27;;
+import { CokieService } from &#x27;../services/cokie.service&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-staff-info&#x27;,
+  templateUrl: &#x27;./staff-info.component.html&#x27;,
+  styleUrls: [&#x27;./staff-info.component.css&#x27;]
+})
+export class StaffInfoComponent implements OnInit {
+
+  staff: Staff[] &#x3D; [];
+
+  personal: Staff &#x3D; {
+    &quot;id&quot;: 0,
+    &quot;name&quot;: &#x27;&#x27;,
+    &quot;lastname&quot;: &#x27;&#x27;,
+    &quot;identification&quot;: 0,
+    &quot;birth&quot;: new Date(),
+    &quot;email&quot;: &#x27;&#x27;,
+    &quot;status&quot;: true
+  }
+
+  auth: Auth &#x3D; {
+    &quot;id&quot;: 0,
+    &quot;userName&quot;: &#x27;&#x27;,
+    &quot;password&quot;: &#x27;&#x27;,
+    &quot;roles&quot;: []
+  }
+
+  stafForm &#x3D; this.formBuilder.group({
+    name: &#x27;&#x27;,
+    lastName: &#x27;&#x27;,
+    userName: &#x27;&#x27;,
+    email: &#x27;&#x27;
+  })
+
+  constructor(private staffService: StaffService,
+    private formBuilder: FormBuilder,
+    private cokieService: CokieService,
+    private authService: AuthService,
+    private router: Router) { }
+
+  /**
+   * inicializa los datos del staff y usuario
+   */
+  ngOnInit(): void {
+    this.getStaff();
+    this.getPersonal();
+  }
+
+  /**
+   * Obtiene los datos del staff
+   */
+  getStaff(): void {
+    this.staffService.getStaff().subscribe(staf &#x3D;&gt; this.staff &#x3D; staf);
+  }
+
+  /**
+   * Obtiene los datos del usuario
+   */
+  getPersonal(): void {
+    this.authService.getUser(this.cokieService.get(&quot;user&quot;)).subscribe(
+      data &#x3D;&gt; {
+        this.auth &#x3D; data
+        this.staffService.getStaffById(this.auth.id).subscribe(
+          data &#x3D;&gt; this.personal &#x3D; data
+        )
+      }
+    );
+  }
+
+  /**
+   * Cambia el status del usuario por su id.
+   * @param {number} id: Id del usuario 
+   */
+  changeStatus(id: number): void {
+    this.staffService.changeStatus(id).subscribe();
+
+    this.router.navigateByUrl(&quot;/staff-info&quot;);
+  }
+
+  /**
+   * Se hace la actualizacion de los datos del usuario. 
+   */
+  onSubmit() {
+    let id &#x3D; this.personal.id;
+    let name &#x3D; this.personal.name;
+    let lastName &#x3D; this.personal.lastname;
+    let email &#x3D; this.personal.email;
+    let iden &#x3D; this.personal.identification;
+    let birth &#x3D; this.personal.birth;
+    let status &#x3D; this.personal.status;
+
+    let userName &#x3D; this.auth.userName;
+    let password &#x3D; this.auth.password;
+    let roles &#x3D; this.auth.roles;
+
+    this.staffService.updateStaff(id, name, lastName, email, iden, birth, status).subscribe();
+    this.authService.updateUser(id, userName, password, roles).subscribe();
+
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;title&quot;&gt;
+    &lt;h1&gt;Personal&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+
+    &lt;div class&#x3D;&quot;row justify-content-center&quot; id&#x3D;&quot;form-container&quot;&gt;
+
+        &lt;div class&#x3D;&quot;col-2&quot;&gt;
+            &lt;label class&#x3D;&quot;form-label&quot;&gt;Nombre &lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;personal.name&quot; /&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-2&quot;&gt;
+            &lt;label class&#x3D;&quot;form-label&quot;&gt;Apellido &lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;personal.lastname&quot; /&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-2&quot;&gt;
+            &lt;label class&#x3D;&quot;form-label&quot;&gt;Nombre de usuario &lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;auth.userName&quot; /&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-2&quot;&gt;
+            &lt;label class&#x3D;&quot;form-label&quot;&gt;Email &lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;personal.email&quot; /&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;row justify-content-end&quot; id&#x3D;&quot;form-container&quot;&gt;
+        &lt;div class&#x3D;&quot;col-2&quot;&gt;
+            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; id&#x3D;&quot;sumbit&quot; (click)&#x3D;&quot;onSubmit()&quot;&gt; Editar &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;table-responsive table-bordered table-hover table-fixed&quot; id&#x3D;&quot;table&quot;&gt;
+    &lt;table class&#x3D;&quot;table&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;#&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Nombre&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Identificación&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Email&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Estatus&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Acciones&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr *ngFor&#x3D;&quot;let staf of staff&quot;&gt;
+                &lt;th scope&#x3D;&quot;row&quot;&gt; {{staf.id}}&lt;/th&gt;
+                &lt;td&gt; {{staf.name}} &lt;/td&gt;
+                &lt;td&gt; {{staf.identification}} &lt;/td&gt;
+                &lt;td&gt; {{staf.email}}&lt;/td&gt;
+                &lt;td&gt; {{staf.status}}&lt;/td&gt;
+                &lt;td&gt; &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-link btn-sm btn-rounded&quot; (click)&#x3D;&quot;changeStatus(staf.id)&quot;&gt;
+                        Cambiar estatus
+                    &lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./staff-info.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#title {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#table {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div id="title">    <h1>Personal</h1></div><div>    <div class="row justify-content-center" id="form-container">        <div class="col-2">            <label class="form-label">Nombre </label>            <input type="text" class="form-control" [(ngModel)]="personal.name" />        </div>        <div class="col-2">            <label class="form-label">Apellido </label>            <input type="text" class="form-control" [(ngModel)]="personal.lastname" />        </div>        <div class="col-2">            <label class="form-label">Nombre de usuario </label>            <input type="text" class="form-control" [(ngModel)]="auth.userName" />        </div>        <div class="col-2">            <label class="form-label">Email </label>            <input type="text" class="form-control" [(ngModel)]="personal.email" />        </div>    </div>    <div class="row justify-content-end" id="form-container">        <div class="col-2">            <button type="submit" class="btn btn-primary" id="sumbit" (click)="onSubmit()"> Editar </button>        </div>    </div></div><div class="table-responsive table-bordered table-hover table-fixed" id="table">    <table class="table">        <thead>            <tr>                <th scope="col">#</th>                <th scope="col">Nombre</th>                <th scope="col">Identificación</th>                <th scope="col">Email</th>                <th scope="col">Estatus</th>                <th scope="col">Acciones</th>            </tr>        </thead>        <tbody>            <tr *ngFor="let staf of staff">                <th scope="row"> {{staf.id}}</th>                <td> {{staf.name}} </td>                <td> {{staf.identification}} </td>                <td> {{staf.email}}</td>                <td> {{staf.status}}</td>                <td> <button type="button" class="btn btn-link btn-sm btn-rounded" (click)="changeStatus(staf.id)">                        Cambiar estatus                    </button></td>            </tr>        </tbody>    </table></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'BookFormComponent', 'selector': 'app-book-form'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'EditorialFormComponent', 'selector': 'app-editorial-form'},{'name': 'EditorialsComponent', 'selector': 'app-editorials'},{'name': 'NavBarComponent', 'selector': 'app-nav-bar'},{'name': 'StaffComponent', 'selector': 'app-staff'},{'name': 'StaffInfoComponent', 'selector': 'app-staff-info'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'StaffInfoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'StaffInfoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
