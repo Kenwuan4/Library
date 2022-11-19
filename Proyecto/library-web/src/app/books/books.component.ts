@@ -30,10 +30,18 @@ export class BooksComponent implements OnInit {
     private cokieService: CokieService,
     private formBuilder: FormBuilder) { }
 
+  /**
+   * Se emplea para conocer la editorial que escogio el usuario 
+   * @param {any} e: codigo y nombre de editorial escogida
+   */
   update(e: any) {
     this.selected = e.target.value;
   }
 
+  /**
+   * Obtiene la información de los libros paginados 
+   * @param {number} page: Pagina actual  
+   */
   getBooks(page: number): void {
     this.title = "Novedades";
     this.bookService.getBook(page, 3, "id", true).subscribe(
@@ -46,6 +54,9 @@ export class BooksComponent implements OnInit {
 
   }
 
+  /**
+   * Verifica si el usuario esta autenticado, si lo está aparece un boton con la opcion de crear un nuevo libro.
+   */
   ngDoCheck(): void {
     if (this.cokieService.get("token").length > 0) {
       this.cookie = true;
@@ -55,6 +66,9 @@ export class BooksComponent implements OnInit {
     }
   }
 
+  /**
+   * Realiza la busqueda dependiendo de la opcion que el usuario haya escogido, libro o editorial.
+   */
   onSumbit() {
     this.title = "Resultados"
     let search: string = '' + this.searchForm.value.search;
@@ -71,6 +85,9 @@ export class BooksComponent implements OnInit {
 
   }
 
+  /**
+   * Obtiene los primero 3 libros.
+   */
   ngOnInit(): void {
     this.getBooks(0);
   }

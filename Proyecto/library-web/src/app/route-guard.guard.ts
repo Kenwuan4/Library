@@ -13,6 +13,9 @@ export class RouteGuardGuard implements CanActivate {
     private router: Router) { }
   response: boolean = false;
 
+  /**
+   * Valida si el usuario esta autenticado y tiene token valido para permitir el ingreso a ciertas urls restringidas
+   */
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

@@ -20,6 +20,10 @@ export class NavBarComponent implements OnInit {
 
   }
 
+  /**
+   * Verifica si el usuario esta autenticado. dependiendo de esto se le muestran opciones de inicar sesion o crear cuenta en caso de que no
+   * y en el caso contrario opciones de ver perfil y cerrar sesion.
+   */
   ngDoCheck(): void {
     if (this.cokieService.get("token").length > 0) {
 
@@ -30,7 +34,9 @@ export class NavBarComponent implements OnInit {
     }
   }
 
-
+  /**
+   * Cierra sesion del usuario y se elimina la informacion del JWT y nombre de usuario. al finalizar se redirecciona a la pagina principal.
+   */
   cerrar(): void {
     this.cokieService.delete("token");
     this.cokieService.delete("user");

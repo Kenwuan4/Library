@@ -33,4 +33,9 @@ describe('StaffInfoComponent', () => {
   it('correct init ', () => {
     expect(component.ngOnInit).toBeTruthy();
   })
+
+  it('should get staff at start ', () => {
+    component.ngOnInit()
+    expect(component.staff).not.toBeNull()
+  })
 });

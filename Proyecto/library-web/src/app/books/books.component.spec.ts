@@ -6,6 +6,7 @@ import { BooksComponent } from './books.component';
 import { DebugElement } from "@angular/core";
 import { By } from "@angular/platform-browser";
 import { BookService } from '../services/book.service';
+import { Observable } from 'rxjs';
 
 describe('BooksComponent', () => {
   let component: BooksComponent;
@@ -23,8 +24,11 @@ describe('BooksComponent', () => {
     fixture = TestBed.createComponent(BooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    providers: [BookService]
+    bookService = fixture.debugElement.injector.get(BookService)
 
     el = fixture.debugElement.query(By.css('a'));
+
   });
 
   it('should create', () => {
@@ -46,7 +50,6 @@ describe('BooksComponent', () => {
     component.selected = "Libros"
     expect(component.books).not.toBeNull
   });
-
 
   it('should change boolean cokie', () => {
     component.ngDoCheck();
