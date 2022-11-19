@@ -18,7 +18,9 @@ export class EditorialsComponent implements OnInit {
     private cokieService: CokieService,
     private router: Router) { }
 
-
+  /**
+   * Verifica si el usuario se auntetico, si lo hizo se genera un boton para crear, editar o eliminar una editorial,  
+   */
   ngDoCheck(): void {
     if (this.cokieService.get("token").length > 0) {
       this.cookie = true;
@@ -29,13 +31,20 @@ export class EditorialsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getEditorial();
+    this.getEditorials();
   }
 
-  getEditorial(): void {
+  /**
+   * Obtiene la informacion de todas las editoriales
+   */
+  getEditorials(): void {
     this.editorialService.getEditorials().subscribe(editorials => this.editorials = editorials)
   }
 
+  /**
+   * Elimina la editorial seleccionada
+   * @param {number}id: Id de la editorial 
+   */
   deleteEditorial(id: number): void {
     console.log(id)
     this.editorialService.deleteEditorial(id).subscribe();

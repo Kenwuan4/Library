@@ -1,0 +1,668 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>library-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">library-web documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  StaffComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/staff/staff.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-staff</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./staff.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./staff.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#registerForm" >registerForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSumbit" >onSumbit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(staffService: <a href="../injectables/StaffService.html" target="_self">StaffService</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, encrypt: <a href="../injectables/EncryptService.html" target="_self">EncryptService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/staff/staff.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>staffService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StaffService.html" target="_self" >StaffService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>encrypt</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EncryptService.html" target="_self" >EncryptService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/staff/staff.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSumbit"></a>
+                    <span class="name">
+                        <span ><b>onSumbit</b></span>
+                        <a href="#onSumbit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSumbit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/staff/staff.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene toda la informacion del registro del usuario para la creacion de un usuario y staff, al finalizar se redirecciona al usuario a la pantalla de login</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerForm"></a>
+                    <span class="name">
+                        <span ><b>registerForm</b></span>
+                        <a href="#registerForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.formBuilder.group({
+    lastName: &#x27;&#x27;,
+    email: &#x27;&#x27;,
+    firstName: &#x27;&#x27;,
+    password: &#x27;&#x27;,
+    userName: &#x27;&#x27;,
+    birth: &#x27;&#x27;,
+    identification: &#x27;&#x27;
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/staff/staff.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Staff } from &#x27;../models/Staff&#x27;;
+import { StaffService } from &#x27;../services/staff.service&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+import { FormBuilder } from &#x27;@angular/forms&#x27;;
+import { EncryptService } from &#x27;../services/encrypt.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+
+@Component({
+  selector: &#x27;app-staff&#x27;,
+  templateUrl: &#x27;./staff.component.html&#x27;,
+  styleUrls: [&#x27;./staff.component.css&#x27;]
+})
+export class StaffComponent implements OnInit {
+
+  registerForm &#x3D; this.formBuilder.group({
+    lastName: &#x27;&#x27;,
+    email: &#x27;&#x27;,
+    firstName: &#x27;&#x27;,
+    password: &#x27;&#x27;,
+    userName: &#x27;&#x27;,
+    birth: &#x27;&#x27;,
+    identification: &#x27;&#x27;
+  })
+
+
+  constructor(private staffService: StaffService,
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private encrypt: EncryptService,
+    private router: Router) { }
+
+  ngOnInit(): void {
+
+  }
+
+  /**
+   * Obtiene toda la informacion del registro del usuario para la creacion de un usuario y staff, al finalizar se redirecciona al usuario a la pantalla de login 
+   */
+  onSumbit(): void {
+    let firstNameParam: string &#x3D; &#x27;&#x27; + this.registerForm.value.firstName;
+    let lastName: string &#x3D; &#x27;&#x27; + this.registerForm.value.lastName;
+    let email: string &#x3D; &#x27;&#x27; + this.registerForm.value.email;
+    let iden: number &#x3D; Number(this.registerForm.value.identification);
+    let birth &#x3D; &#x27;&#x27; + (this.registerForm.value.birth);
+
+    let userName: string &#x3D; &#x27;&#x27; + this.registerForm.value.userName;
+    let passParam: string &#x3D; this.encrypt.encryptUsingAES256(&#x27;&#x27; + this.registerForm.value.password);
+
+
+    this.staffService.registerStaff(firstNameParam, lastName, email, iden, new Date(birth), true).subscribe(
+      data &#x3D;&gt; { }
+    )
+
+    this.authService.registerUser(userName, passParam).subscribe(
+      data &#x3D;&gt; {
+        this.registerForm.reset();
+        this.router.navigateByUrl(&#x27;/login&#x27;);
+      });
+
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card text-bg-light mb-3&quot; style&#x3D;&quot;max-width: 30rem;&quot; id&#x3D;&quot;border&quot;&gt;
+  &lt;form class&#x3D;&quot;custom-form&quot; [formGroup]&#x3D;&quot;registerForm&quot; novalidate (ngSubmit)&#x3D;&quot;onSumbit()&quot;&gt;
+
+    &lt;!-- Title --&gt;
+    &lt;div class&#x3D;&quot;col-md-12 text-center&quot;&gt;
+      &lt;h5&gt; Registrarse en la Libreria PUJ&lt;/h5&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;form-outline mb-4&quot;&gt;
+      &lt;div class&#x3D;&quot;row align-items-start&quot;&gt;
+        &lt;!-- Name --&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;label for&#x3D;&quot;validationCustom01&quot; class&#x3D;&quot;form-label&quot;&gt;Nombre&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;firstName&quot; required&gt;
+        &lt;/div&gt;
+        &lt;!-- LastName --&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;label for&#x3D;&quot;validationCustom02&quot; class&#x3D;&quot;form-label&quot;&gt;Apellido&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;lastName&quot; required&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;form-outline mb-4&quot;&gt;
+      &lt;div class&#x3D;&quot;row align-items-start&quot;&gt;
+
+        &lt;!-- Birthday --&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;label for&#x3D;&quot;validationCustomUsername&quot; class&#x3D;&quot;form-label&quot;&gt;Fecha de nacimiento&lt;/label&gt;
+          &lt;input type&#x3D;&quot;date&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;birth&quot; aria-describedby&#x3D;&quot;inputGroupPrepend&quot; required&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Identification --&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;label for&#x3D;&quot;validationCustomUsername&quot; class&#x3D;&quot;form-label&quot;&gt;Identificación&lt;/label&gt;
+          &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;identification&quot;
+            aria-describedby&#x3D;&quot;inputGroupPrepend&quot; required&gt;
+        &lt;/div&gt;
+
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;form-outline mb-4&quot;&gt;
+      &lt;label for&#x3D;&quot;validationCustomUsername&quot; class&#x3D;&quot;form-label&quot;&gt;Nombre de usuario&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;userName&quot; aria-describedby&#x3D;&quot;inputGroupPrepend&quot; required&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Email --&gt;
+    &lt;div class&#x3D;&quot;form-outline mb-4&quot;&gt;
+      &lt;label for&#x3D;&quot;validationCustomUsername&quot; class&#x3D;&quot;form-label&quot;&gt;Correo&lt;/label&gt;
+      &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;email&quot; aria-describedby&#x3D;&quot;inputGroupPrepend&quot; required&gt;
+    &lt;/div&gt;
+
+
+    &lt;!-- Password --&gt;
+    &lt;div class&#x3D;&quot;form-outline mb-4&quot;&gt;
+      &lt;label for&#x3D;&quot;validationCustomUsername&quot; class&#x3D;&quot;form-label&quot;&gt;Contraseña&lt;/label&gt;
+      &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;password&quot; aria-describedby&#x3D;&quot;inputGroupPrepend&quot;
+        required&gt;
+    &lt;/div&gt;
+
+
+    &lt;!-- Submit --&gt;
+    &lt;div class&#x3D;&quot;col-md-12 text-center&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn-primary&quot; type&#x3D;&quot;submit&quot;&gt;Registrarse&lt;/button&gt;
+    &lt;/div&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./staff.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#sumbit {
+    margin-top: 30px;
+}
+
+
+#border {
+    border: 2px solid #4287f5;
+    margin: 0 auto;
+    /* Added */
+    float: none;
+    /* Added */
+    margin-bottom: 10px;
+    /* Added */
+    padding: 2rem;
+    margin-top: 30px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card text-bg-light mb-3" style="max-width: 30rem;" id="border">  <form class="custom-form" [formGroup]="registerForm" novalidate (ngSubmit)="onSumbit()">    <!-- Title -->    <div class="col-md-12 text-center">      <h5> Registrarse en la Libreria PUJ</h5>    </div>    <div class="form-outline mb-4">      <div class="row align-items-start">        <!-- Name -->        <div class="col">          <label for="validationCustom01" class="form-label">Nombre</label>          <input type="text" class="form-control" formControlName="firstName" required>        </div>        <!-- LastName -->        <div class="col">          <label for="validationCustom02" class="form-label">Apellido</label>          <input type="text" class="form-control" formControlName="lastName" required>        </div>      </div>    </div>    <div class="form-outline mb-4">      <div class="row align-items-start">        <!-- Birthday -->        <div class="col">          <label for="validationCustomUsername" class="form-label">Fecha de nacimiento</label>          <input type="date" class="form-control" formControlName="birth" aria-describedby="inputGroupPrepend" required>        </div>        <!-- Identification -->        <div class="col">          <label for="validationCustomUsername" class="form-label">Identificación</label>          <input type="number" class="form-control" formControlName="identification"            aria-describedby="inputGroupPrepend" required>        </div>      </div>    </div>    <div class="form-outline mb-4">      <label for="validationCustomUsername" class="form-label">Nombre de usuario</label>      <input type="text" class="form-control" formControlName="userName" aria-describedby="inputGroupPrepend" required>    </div>    <!-- Email -->    <div class="form-outline mb-4">      <label for="validationCustomUsername" class="form-label">Correo</label>      <input type="email" class="form-control" formControlName="email" aria-describedby="inputGroupPrepend" required>    </div>    <!-- Password -->    <div class="form-outline mb-4">      <label for="validationCustomUsername" class="form-label">Contraseña</label>      <input type="password" class="form-control" formControlName="password" aria-describedby="inputGroupPrepend"        required>    </div>    <!-- Submit -->    <div class="col-md-12 text-center">      <button class="btn btn-primary" type="submit">Registrarse</button>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'BookFormComponent', 'selector': 'app-book-form'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'BooksComponent', 'selector': 'app-books'},{'name': 'EditorialFormComponent', 'selector': 'app-editorial-form'},{'name': 'EditorialsComponent', 'selector': 'app-editorials'},{'name': 'NavBarComponent', 'selector': 'app-nav-bar'},{'name': 'StaffComponent', 'selector': 'app-staff'},{'name': 'StaffInfoComponent', 'selector': 'app-staff-info'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'StaffComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'StaffComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -46,15 +46,24 @@ export class StaffInfoComponent implements OnInit {
     private authService: AuthService,
     private router: Router) { }
 
+  /**
+   * inicializa los datos del staff y usuario
+   */
   ngOnInit(): void {
     this.getStaff();
     this.getPersonal();
   }
 
+  /**
+   * Obtiene los datos del staff
+   */
   getStaff(): void {
     this.staffService.getStaff().subscribe(staf => this.staff = staf);
   }
 
+  /**
+   * Obtiene los datos del usuario
+   */
   getPersonal(): void {
     this.authService.getUser(this.cokieService.get("user")).subscribe(
       data => {
@@ -66,12 +75,19 @@ export class StaffInfoComponent implements OnInit {
     );
   }
 
+  /**
+   * Cambia el status del usuario por su id.
+   * @param {number} id: Id del usuario 
+   */
   changeStatus(id: number): void {
     this.staffService.changeStatus(id).subscribe();
 
     this.router.navigateByUrl("/staff-info");
   }
 
+  /**
+   * Se hace la actualizacion de los datos del usuario. 
+   */
   onSubmit() {
     let id = this.personal.id;
     let name = this.personal.name;

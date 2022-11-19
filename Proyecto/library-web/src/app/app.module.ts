@@ -13,7 +13,10 @@ import { StaffInfoComponent } from './staff-info/staff-info.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BookFormComponent } from './book-form/book-form.component';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1f14070 (Documentación frontend)
 import { EditorialFormComponent } from './editorial-form/editorial-form.component';
 
 @NgModule({
