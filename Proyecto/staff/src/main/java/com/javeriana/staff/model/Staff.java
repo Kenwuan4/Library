@@ -14,6 +14,13 @@ import java.sql.Date;
 @AllArgsConstructor
 @Getter
 @Setter
+/**
+ * Esta entidad es utilizada para manejar los usuarios.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 
 public class Staff {
 

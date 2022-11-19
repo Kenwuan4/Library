@@ -101,7 +101,9 @@ public class AuthGatewayFilterFactory extends
 
     }
 
-
+    /**
+     * This class is for put the configuration properties
+     */
     public static class Config {
 
         public Config() {

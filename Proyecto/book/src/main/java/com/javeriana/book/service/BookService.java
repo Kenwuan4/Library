@@ -12,7 +12,13 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
+/**
+ * En esta interfaz se conecta con la base de datos para realizar operaciones.
+ *
+ * @author  Mateo Rocero y Javier Ramírez
+ * @version 1.0
+ * @since   2022-10-16
+ */
 @Service
 public class BookService {
     @Autowired

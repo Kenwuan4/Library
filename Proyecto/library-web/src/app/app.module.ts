@@ -13,7 +13,7 @@ import { StaffInfoComponent } from './staff-info/staff-info.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BookFormComponent } from './book-form/book-form.component';
-import { HeadersInterceptor } from './headers.interceptor';
+
 import { EditorialFormComponent } from './editorial-form/editorial-form.component';
 
 @NgModule({

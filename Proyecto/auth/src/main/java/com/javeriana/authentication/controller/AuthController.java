@@ -37,6 +37,12 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    /**
+     * En este método HTTP GET se hacen una busqueda de un usuario por su ID.
+     *@param  userName Este parametro corresponde al usuario a buscar
+     * @return User retorna el usuario encontrado.
+     */
+
     @GetMapping("/user/{userName}")
     public User getUserByID(@PathVariable("userName") String userName){
         return userService.getUSer(userName);
@@ -44,7 +50,7 @@ public class AuthController {
 
 
     /**
-     * En este método HTTP se realiza la autenticación
+     * En este método HTTP POST se realiza la autenticación
      @param  jwtRequest Corresponde a la clase que contiene las credenciales usuario y contraseña.
      */
     @PostMapping(value = "/login")
@@ -72,21 +78,40 @@ public class AuthController {
                 HttpStatus.NOT_FOUND, "token not found"
         );
     }
+    /**
+     * En este método HTTP PUT se actualiza un usuario.
+     *@param  user Este parametro corresponde al usuario a actualualizar.
+     * @return User retorna el usuario actualizado.
+     */
 
     @PutMapping("user/update")
     public User updateUser(@RequestBody User user){
         return userService.saveUser(user);
     }
+    /**
+     * En este método HTTP POST se registra un usuario.
+     *@param  user Este parametro corresponde al usuario a registrar.
+     * @return User retorna el usuario registrado.
+     */
     @PostMapping(value = "/register")
     public ResponseEntity<?> register(@RequestBody User user){
 
         return ResponseEntity.ok(userService.saveUser(user));
     }
+    /**
+     * En este método HTTP GET se valida un token
+     * @return Boolean retorna verdadero si el token es valido.
+     */
 
     @GetMapping("/validateToken")
     public ResponseEntity<?> validate() {
         return ResponseEntity.ok(true);
     }
+
+    /**
+     * En este método HTTP GET se valida el rol MANAGER
+     * @return String retorna una cadena si rol es valido
+     */
 
 
     //Only ADMIN role can access this
@@ -96,6 +121,10 @@ public class AuthController {
         return "Welcome with token !!";
     }
 
+    /**
+     * En este método HTTP GET se valida el rol USER
+     * @return String una cadena  si rol es valido.
+     */
 
     //Only USER role can access this
     @PreAuthorize("hasAnyRole('USER')")

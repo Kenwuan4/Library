@@ -3,6 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth.component';
 import { Auth} from '../models/Auth'
+import {By } from '@angular/platform-browser'
 
 describe('AuthComponent', () => {
   let component: AuthComponent;
@@ -23,6 +24,12 @@ describe('AuthComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should have green background', () => {
+    const e = fixture.debugElement.query(By.css("#border")).nativeElement;
+    expect(getComputedStyle(e).padding).toEqual('32px')
+    expect(getComputedStyle(e).marginBottom).toEqual('16px')
+  });
+ 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
