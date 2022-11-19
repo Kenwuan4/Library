@@ -34,7 +34,7 @@ public class StaffService {
     public Staff getStaffById(Integer id){return staffRepository.findStaffById(id); }
     /**
      * En este método se usa para guardar un empleado
-     *@param  id Este parametro corresponde al id del usuario a guardar
+     *@param  staff Este parametro corresponde al usuario a guardar
      * @return User retorna el usuario guardado.
      */
     public Staff saveStaff(Staff staff){
