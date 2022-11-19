@@ -24,9 +24,7 @@ export class StaffComponent implements OnInit {
     identification: ''
   })
 
-  staff: Staff[] = [];
 
-  console = console;
   constructor(private staffService: StaffService,
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -36,6 +34,10 @@ export class StaffComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  /**
+   * Obtiene toda la informacion del registro del usuario para la creacion de un usuario y staff, al finalizar se redirecciona al usuario a la pantalla de login 
+   */
   onSumbit(): void {
     let firstNameParam: string = '' + this.registerForm.value.firstName;
     let lastName: string = '' + this.registerForm.value.lastName;
@@ -59,8 +61,5 @@ export class StaffComponent implements OnInit {
 
   }
 
-  getStaff(): void {
-    this.staffService.getStaff().subscribe(staf => this.staff = staf);
-  }
 
 }

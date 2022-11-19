@@ -27,6 +27,11 @@ export class EditorialFormComponent implements OnInit {
     private router: Router,
     private editorialService: EditorialService) { }
 
+
+  /**
+   * Obtiene la informacion de la editorial en caso de que la url contenga "edit" y pone el titulo "Editar", en caso de que la url contenga 
+   * "create", simplemente se pondra el titulo "Crear editorial"
+   */
   ngOnInit(): void {
 
     if (this.router.url.includes('create')) {
@@ -39,6 +44,10 @@ export class EditorialFormComponent implements OnInit {
     }
   }
 
+  /**
+   * Obtiene la información que el usuario cambio de la editorial y dependiendo si el usuario edito o creo una editorial, se llama al editorialService
+   * con la funcion de editar o crear. Al finalizar se redirecciona al usuario a la pagina principal de editoriales.
+   */
   onSubmit(): void {
     let name: string = this.editorial.name;
     let url: string = this.editorial.img;
@@ -60,6 +69,9 @@ export class EditorialFormComponent implements OnInit {
     this.router.navigateByUrl("/editorials");
   }
 
+  /**
+   * Obtiene la informacion de una editorial dependiendo de su id 
+   */
   getEditorialByid(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.editorialService.getEditorialById(id).subscribe(data => this.editorial = data);

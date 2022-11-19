@@ -12,6 +12,9 @@ import { EncryptService } from '../services/encrypt.service';
 })
 export class AuthComponent implements OnInit {
 
+  /**
+   * Empelado para obtener usuario y contraseña de la persona
+   */
   loginForm = this.formBuilder.group({
     login: '',
     password: '',
@@ -25,6 +28,12 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  /**
+   * Se obtiene la informacion del form y es enviado al auth service donde se autentica el usuario.
+   * Si el usuario es autenticado se le redirecciona a la pagina principal, si no se le manda una alerta de usuario o contraseña incorrecta
+   */
 
   onSubmit(): void {
 
